@@ -115,7 +115,6 @@ public class US011StepDef {
         Driver.closeDriver();
     }
 
-    // TC_002
 
     @And("Doktor11 acilan sayfada hastanin  ID, Start Date Time, End Date Time, Status, Physician ve Patient bilgilerinin goruldugunu dogrular")
     public void doktorAcilanSayfadaHastaninIDStartDateTimeEndDateTimeStatusPhysicianVePatientBilgilerininGoruldugunuDogrular() {
@@ -131,7 +130,6 @@ public class US011StepDef {
     }
 
 
-    // TC_003
 
     @And("Doktor11 Anamnesis, Treatment ve Diagnosis alanlarini bos birakir")
     public void doktorAnamnesisTreatmentVeDiagnosisAlanlariniBosBirakir() throws InterruptedException {
@@ -159,7 +157,6 @@ public class US011StepDef {
     }
 
 
-    // TC_004.1
 
     @And("Doktor11 prescription ve description alanlarini bos birakir")
     public void doktorPrescriptionVeDescriptionAlanlariniBosBirakir() {
@@ -169,7 +166,6 @@ public class US011StepDef {
 
     }
 
-    // US_004.2
 
     @And("Doktor11 prescription ve description alanlarina bilgiler girer")
     public void doktorPrescriptionVeDescriptionAlanlarinaBilgilerGirer() throws InterruptedException {
@@ -182,7 +178,6 @@ public class US011StepDef {
     }
 
 
-    // US_005
 
     @And("Doktor11 status alanini tiklar ve PENDING opsiyonunu secer")
     public void doktorStatusAlaniniTiklarVePENDINGOpsiyonunuSecer() {
@@ -210,11 +205,3 @@ public class US011StepDef {
 
 }
 
-
-/*
-List<WebElement>edit=Driver.getDriver().findElements(By.cssSelector("[class=\"form-group\"]>textarea"));
-        for (int i = 1; i <edit.size() ; i++) {
-
-
-        }
- */
