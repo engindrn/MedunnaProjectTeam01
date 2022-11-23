@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.US004Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -16,20 +17,20 @@ public class US004StepDef {
 
     US004Page us004Page = new US004Page();
 
-    @Given("Admin {string} adresine gider")
+    @Given("Admin04 {string} adresine gider")
     public void adminAdresineGider(String url) {
 
         Driver.getDriver().get(ConfigReader.getProperty(url));
 
     }
 
-    @When("Admin Giris simgesine tiklar")
+    @When("Admin04 Giris simgesine tiklar")
     public void adminGirisSimgesineTiklar() {
         us004Page.accountMenu.click();
 
     }
 
-    @And("Admin Sign in simgesine tiklar")
+    @And("Admin04 Sign in simgesine tiklar")
     public void adminSignInSimgesineTiklar() {
         us004Page.signIn.click();
     }
@@ -38,12 +39,12 @@ public class US004StepDef {
 
 
 
-    @And("Admin Sign in butonuna tiklar")
+    @And("Admin04 Sign in butonuna tiklar")
     public void adminSignInButonunaTiklar() {
         us004Page.signInButton.click();
     }
 
-    @Then("Admin Basarili giris mesajini görür")
+    @Then("Admin04 Basarili giris mesajini görür")
     public void adminBasariliGirisMesajiniGörür() {
         if (Driver.getDriver().getPageSource().contains("the success message ")){
             assertTrue(true);
@@ -52,20 +53,20 @@ public class US004StepDef {
 
     }
 
-    @Given("Doktor {string} adresine gider")
+    @Given("Doktor04 {string} adresine gider")
     public void doktorAdresineGider(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url));
 
 
     }
 
-    @When("Doktor Giris simgesine tiklar")
+    @When("Doktor04 Giris simgesine tiklar")
     public void doktorGirisSimgesineTiklar() {
         us004Page.accountMenu.click();
 
     }
 
-    @And("Doktor Sign in simgesine tiklar")
+    @And("Doktor04 Sign in simgesine tiklar")
     public void doktorSignInSimgesineTiklar() {
         us004Page.signIn.click();
 
@@ -75,12 +76,12 @@ public class US004StepDef {
 
 
 
-    @And("Doktor Sign in butonuna tiklar")
+    @And("Doktor04 Sign in butonuna tiklar")
     public void doktorSignInButonunaTiklar() {
         us004Page.signInButton.click();
     }
 
-    @Then("Doktor Basarili giris mesajini görür")
+    @Then("Doktor04 Basarili giris mesajini görür")
     public void doktorBasariliGirisMesajiniGörür() {
 
         if (Driver.getDriver().getPageSource().contains("the success message ")){
@@ -90,19 +91,19 @@ public class US004StepDef {
 
     }
 
-    @Given("Hasta {string} adresine gider")
+    @Given("Hasta04 {string} adresine gider")
     public void hastaAdresineGider(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url));
 
 
     }
 
-    @When("Hasta Giris simgesine tiklar")
+    @When("Hasta04 Giris simgesine tiklar")
     public void hastaGirisSimgesineTiklar() {
         us004Page.accountMenu.click();
     }
 
-    @And("Hasta Sign in simgesine tiklar")
+    @And("Hasta04 Sign in simgesine tiklar")
     public void hastaSignInSimgesineTiklar() {
         us004Page.signIn.click();
     }
@@ -111,12 +112,12 @@ public class US004StepDef {
 
 
 
-    @And("Hasta Sign in butonuna tiklar")
+    @And("Hasta04 Sign in butonuna tiklar")
     public void hastaSignInButonunaTiklar() {
         us004Page.signInButton.click();
     }
 
-    @Then("Hasta Basarili giris mesajini görür")
+    @Then("Hasta04 Basarili giris mesajini görür")
     public void hastaBasariliGirisMesajiniGörür() {
         if (Driver.getDriver().getPageSource().contains("the success message ")){
             assertTrue(true);
@@ -125,18 +126,18 @@ public class US004StepDef {
 
     }
 
-    @Given("Personel {string} adresine gider")
+    @Given("Personel04 {string} adresine gider")
     public void personelAdresineGider(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url));
 
     }
 
-    @When("Personel Giris simgesine tiklar")
+    @When("Personel04 Giris simgesine tiklar")
     public void personelGirisSimgesineTiklar() {
         us004Page.accountMenu.click();
     }
 
-    @And("Personel Sign in simgesine tiklar")
+    @And("Personel04 Sign in simgesine tiklar")
     public void personelSignInSimgesineTiklar() {
         us004Page.signIn.click();
     }
@@ -145,12 +146,12 @@ public class US004StepDef {
 
 
 
-    @And("Personel Sign in butonuna tiklar")
+    @And("Personel04 Sign in butonuna tiklar")
     public void personelSignInButonunaTiklar() {
         us004Page.signInButton.click();
     }
 
-    @Then("Personel Basarili giris mesajini görür")
+    @Then("Personel04 Basarili giris mesajini görür")
     public void personelBasariliGirisMesajiniGörür() {
 
         if (Driver.getDriver().getPageSource().contains("the success message ")){
@@ -160,37 +161,37 @@ public class US004StepDef {
 
     }
 
-    @Given("Kullanici {string} adresine gider")
+    @Given("Kullanici04 {string} adresine gider")
     public void kullaniciAdresineGider(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url));
     }
 
-    @When("Kullanici Giris simgesine tiklar")
+    @When("Kullanici04 Giris simgesine tiklar")
     public void kullaniciGirisSimgesineTiklar() {
         us004Page.accountMenu.click();
     }
 
-    @And("Kullanici Sign in simgesine tiklar")
+    @And("Kullanici04 Sign in simgesine tiklar")
     public void kullaniciSignInSimgesineTiklar() {
         us004Page.signIn.click();
     }
 
-    @Then("Kullanici Remember me secenegini görür")
+    @Then("Kullanici04 Remember me secenegini görür")
     public void kullaniciRememberMeSeceneginiGörür() {
         assertTrue(us004Page.rememberMe.isDisplayed());
     }
 
-    @Then("Kullanici Did you forget your password? secenegini  görür")
+    @Then("Kullanici04 Did you forget your password? secenegini  görür")
     public void kullaniciDidYouForgetYourPasswordSeceneginiGörür() {
         assertTrue(us004Page.forgetPassword.isDisplayed());
     }
 
-    @Then("Kullanici You don't have an account yet? Register a new account secenegini görür")
+    @Then("Kullanici04 You don't have an account yet? Register a new account secenegini görür")
     public void kullaniciYouDonTHaveAnAccountYetRegisterANewAccountSeceneginiGörür() {
         assertTrue(us004Page.registerNewAccount.isDisplayed());
     }
 
-    @Then("Kullanici Cancel seçeneğini görür")
+    @Then("Kullanici04 Cancel seçeneğini görür")
     public void kullaniciCancelSeçeneğiniGörür() {
         assertTrue(us004Page.cancel.isDisplayed());
 
@@ -200,12 +201,12 @@ public class US004StepDef {
 
 
 
-    @And("Kullanici Sign in butonuna tiklar")
+    @And("Kullanici04 Sign in butonuna tiklar")
     public void kullaniciSignInButonunaTiklar() {
         us004Page.signInButton.click();
     }
 
-    @Then("Kullanici Authentication information not correct yazisini görür")
+    @Then("Kullanici04 Authentication information not correct yazisini görür")
     public void kullaniciAuthenticationInformationNotCorrectYazisiniGörür() {
         String expectedData="Authentication information not correct.";
         String actualData = us004Page.authenticationNotCorrect.getText();
@@ -225,63 +226,63 @@ public class US004StepDef {
     }
 
 
-    @And("Admin Username alanina gecerli bir {string} girer")
+    @And("Admin04 Username alanina gecerli bir {string} girer")
     public void adminUsernameAlaninaGecerliBirGirer(String username) {
         us004Page.username.sendKeys(username);
     }
 
-    @And("Admin Password alanina gecerli bir {string} girer")
+    @And("Admin04 Password alanina gecerli bir {string} girer")
     public void adminPasswordAlaninaGecerliBirGirer(String password) {
         us004Page.password.sendKeys(password);
     }
 
-    @And("Doktor Username alanina gecerli bir {string} girer")
+    @And("Doktor04 Username alanina gecerli bir {string} girer")
     public void doktorUsernameAlaninaGecerliBirGirer(String username) {
         us004Page.username.sendKeys(username);
     }
 
-    @And("Doktor Password alanina gecerli bir {string} girer")
+    @And("Doktor04 Password alanina gecerli bir {string} girer")
     public void doktorPasswordAlaninaGecerliBirGirer(String password) {
         us004Page.password.sendKeys(password);
     }
 
-    @And("Hasta Username alanina gecerli bir {string} girer")
+    @And("Hasta04 Username alanina gecerli bir {string} girer")
     public void hastaUsernameAlaninaGecerliBirGirer(String username) {
         us004Page.username.sendKeys(username);
     }
 
-    @And("Hasta Password alanina gecerli bir {string} girer")
+    @And("Hasta04 Password alanina gecerli bir {string} girer")
     public void hastaPasswordAlaninaGecerliBirGirer(String password) {
         us004Page.password.sendKeys(password);
     }
 
-    @And("Personel Username alanina gecerli bir {string} girer")
+    @And("Personel04 Username alanina gecerli bir {string} girer")
     public void personelUsernameAlaninaGecerliBirGirer(String username) {
         us004Page.username.sendKeys(username);
     }
 
-    @And("Personel Password alanina gecerli bir {string} girer")
+    @And("Personel04 Password alanina gecerli bir {string} girer")
     public void personelPasswordAlaninaGecerliBirGirer(String password) {
         us004Page.password.sendKeys(password);
     }
 
-    @And("Kullanici Username alanina gecerli bir {string} girer")
+    @And("Kullanici04 Username alanina gecerli bir {string} girer")
     public void kullaniciUsernameAlaninaGecerliBirGirer(String username) {
         us004Page.username.sendKeys(username);
     }
 
-    @And("Kullanici Password alanina gecersiz bir {string} girer")
+    @And("Kullanici04 Password alanina gecersiz bir {string} girer")
     public void kullaniciPasswordAlaninaGecersizBirGirer(String password) {
         us004Page.password.sendKeys(password);
 
     }
 
-    @And("Kullanici Username alanina gecersiz bir {string} girer")
+    @And("Kullanici04 Username alanina gecersiz bir {string} girer")
     public void kullaniciUsernameAlaninaGecersizBirGirer(String username) {
         us004Page.username.sendKeys(username);
     }
 
-    @And("Kullanici Password alanina gecerli bir {string} girer")
+    @And("Kullanici04 Password alanina gecerli bir {string} girer")
     public void kullaniciPasswordAlaninaGecerliBirGirer(String password) {
         us004Page.password.sendKeys(password);
     }
