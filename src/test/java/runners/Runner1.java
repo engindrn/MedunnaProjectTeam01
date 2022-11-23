@@ -1,10 +1,11 @@
 
 
-    package runners;
+package runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
+
 
     @RunWith(Cucumber.class)
     @CucumberOptions(
@@ -17,11 +18,11 @@ import org.junit.runner.RunWith;
             tags="@US011",
             dryRun=false
 
-    )
+)
 //"html:target/cucumber-reports/cucumber.html",
 //"json:target/cucumber-reports/cucumber.json"
 
-    public class Runner1 {
+public class Runner1 {
 
    /*
 
@@ -41,5 +42,5 @@ DryRun=false; default ayaridir. testlerimizi calistirir
 
  */
 
-    }
+}
 
