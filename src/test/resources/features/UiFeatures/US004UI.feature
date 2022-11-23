@@ -8,8 +8,8 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     Given Admin "url" adresine gider
     When Admin Giris simgesine tiklar
     And Admin Sign in simgesine tiklar
-    And Admin Username alanina gecerli bir username girer
-    And Admin Password alanina gecerli bir password girer
+    And Admin Username alanina gecerli bir "team01" girer
+    And Admin Password alanina gecerli bir "team0101" girer
     And Admin Sign in butonuna tiklar
     And 3 sn bekler
     Then Admin Basarili giris mesajini görür
@@ -21,8 +21,8 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     Given Doktor "url" adresine gider
     When Doktor Giris simgesine tiklar
     And  Doktor Sign in simgesine tiklar
-    And  Doktor Username alanina gecerli bir username girer
-    And  Doktor Password alanina gecerli bir password girer
+    And  Doktor Username alanina gecerli bir "doktor01." girer
+    And  Doktor Password alanina gecerli bir "Doktor01." girer
     And  Doktor Sign in butonuna tiklar
     And 3 sn bekler
     Then Doktor Basarili giris mesajini görür
@@ -34,8 +34,8 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     Given Hasta "url" adresine gider
     When Hasta Giris simgesine tiklar
     And Hasta Sign in simgesine tiklar
-    And Hasta Username alanina gecerli bir username girer
-    And Hasta Password alanina gecerli bir password girer
+    And Hasta Username alanina gecerli bir "Hastateam01" girer
+    And Hasta Password alanina gecerli bir "Hastateam.01" girer
     And Hasta Sign in butonuna tiklar
     And 3 sn bekler
     Then Hasta Basarili giris mesajini görür
@@ -47,8 +47,8 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     Given Personel "url" adresine gider
     When Personel Giris simgesine tiklar
     And Personel Sign in simgesine tiklar
-    And Personel Username alanina gecerli bir username girer
-    And Personel Password alanina gecerli bir password girer
+    And Personel Username alanina gecerli bir "personelteam01." girer
+    And Personel Password alanina gecerli bir "Personelteam01." girer
     And Personel Sign in butonuna tiklar
     And 3 sn bekler
     Then Personel Basarili giris mesajini görür
@@ -96,8 +96,8 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     Given Kullanici "url" adresine gider
     When Kullanici Giris simgesine tiklar
     And Kullanici Sign in simgesine tiklar
-    And Kullanici Username alanina gecerli bir username girer
-    And Kullanici Password alanina gecersiz bir password girer
+    And Kullanici Username alanina gecerli bir "team01" girer
+    And Kullanici Password alanina gecersiz bir "team01011" girer
     And Kullanici Sign in butonuna tiklar
     And 3 sn bekler
     Then Kullanici Authentication information not correct yazisini görür
@@ -109,8 +109,8 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     Given Kullanici "url" adresine gider
     When Kullanici Giris simgesine tiklar
     And Kullanici Sign in simgesine tiklar
-    And Kullanici Username alanina gecersiz bir username girer
-    And Kullanici Password alanina gecerli bir password girer
+    And Kullanici Username alanina gecersiz bir "team012" girer
+    And Kullanici Password alanina gecerli bir "team0101" girer
     And Kullanici Sign in butonuna tiklar
     And 3 sn bekler
     Then Kullanici Authentication information not correct yazisini görür
@@ -122,8 +122,8 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     Given Kullanici "url" adresine gider
     When Kullanici Giris simgesine tiklar
     And Kullanici Sign in simgesine tiklar
-    And Kullanici Username alanina gecersiz bir username girer
-    And Kullanici Password alanina gecersiz bir password girer
+    And Kullanici Username alanina gecersiz bir "team012" girer
+    And Kullanici Password alanina gecersiz bir "team01011" girer
     And Kullanici Sign in butonuna tiklar
     And 3 sn bekler
     Then Kullanici Authentication information not correct yazisini görür

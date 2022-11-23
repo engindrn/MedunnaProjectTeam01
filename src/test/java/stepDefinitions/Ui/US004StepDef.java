@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.US004Page;
+import org.junit.Assert;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -34,15 +34,9 @@ public class US004StepDef {
         us004Page.signIn.click();
     }
 
-    @And("Admin Username alanina gecerli bir username girer")
-    public void adminUsernameAlaninaGecerliBirUsernameGirer() {
-        us004Page.username.sendKeys(ConfigReader.getProperty("adminUsername4"));
-    }
 
-    @And("Admin Password alanina gecerli bir password girer")
-    public void adminPasswordAlaninaGecerliBirPasswordGirer() {
-        us004Page.password.sendKeys(ConfigReader.getProperty("adminPassword4"));
-    }
+
+
 
     @And("Admin Sign in butonuna tiklar")
     public void adminSignInButonunaTiklar() {
@@ -51,7 +45,10 @@ public class US004StepDef {
 
     @Then("Admin Basarili giris mesajini görür")
     public void adminBasariliGirisMesajiniGörür() {
-        assertTrue(Driver.getDriver().getPageSource().contains("success message to login"));
+        if (Driver.getDriver().getPageSource().contains("the success message ")){
+            assertTrue(true);
+
+        }else Assert.fail("the succes message yazisi görüntülenemedi");
 
     }
 
@@ -74,15 +71,9 @@ public class US004StepDef {
 
     }
 
-    @And("Doktor Username alanina gecerli bir username girer")
-    public void doktorUsernameAlaninaGecerliBirUsernameGirer() {
-        us004Page.username.sendKeys(ConfigReader.getProperty("doktorUsername4"));
-    }
 
-    @And("Doktor Password alanina gecerli bir password girer")
-    public void doktorPasswordAlaninaGecerliBirPasswordGirer() {
-        us004Page.password.sendKeys(ConfigReader.getProperty("doktorPassword4"));
-    }
+
+
 
     @And("Doktor Sign in butonuna tiklar")
     public void doktorSignInButonunaTiklar() {
@@ -91,7 +82,11 @@ public class US004StepDef {
 
     @Then("Doktor Basarili giris mesajini görür")
     public void doktorBasariliGirisMesajiniGörür() {
-        assertTrue(Driver.getDriver().getPageSource().contains("success message to login"));
+
+        if (Driver.getDriver().getPageSource().contains("the success message ")){
+            assertTrue(true);
+
+        }else Assert.fail("the succes message yazisi görüntülenemedi");
 
     }
 
@@ -112,15 +107,9 @@ public class US004StepDef {
         us004Page.signIn.click();
     }
 
-    @And("Hasta Username alanina gecerli bir username girer")
-    public void hastaUsernameAlaninaGecerliBirUsernameGirer() {
-        us004Page.username.sendKeys(ConfigReader.getProperty("hastaUsername4"));
-    }
 
-    @And("Hasta Password alanina gecerli bir password girer")
-    public void hastaPasswordAlaninaGecerliBirPasswordGirer() {
-        us004Page.password.sendKeys(ConfigReader.getProperty("hastaPassword4"));
-    }
+
+
 
     @And("Hasta Sign in butonuna tiklar")
     public void hastaSignInButonunaTiklar() {
@@ -129,7 +118,10 @@ public class US004StepDef {
 
     @Then("Hasta Basarili giris mesajini görür")
     public void hastaBasariliGirisMesajiniGörür() {
-        assertTrue(Driver.getDriver().getPageSource().contains("success message to login"));
+        if (Driver.getDriver().getPageSource().contains("the success message ")){
+            assertTrue(true);
+
+        }else Assert.fail("the succes message yazisi görüntülenemedi");
 
     }
 
@@ -149,15 +141,9 @@ public class US004StepDef {
         us004Page.signIn.click();
     }
 
-    @And("Personel Username alanina gecerli bir username girer")
-    public void personelUsernameAlaninaGecerliBirUsernameGirer() {
-        us004Page.username.sendKeys(ConfigReader.getProperty("personelUsername4"));
-    }
 
-    @And("Personel Password alanina gecerli bir password girer")
-    public void personelPasswordAlaninaGecerliBirPasswordGirer() {
-        us004Page.password.sendKeys(ConfigReader.getProperty("personelPassword4"));
-    }
+
+
 
     @And("Personel Sign in butonuna tiklar")
     public void personelSignInButonunaTiklar() {
@@ -166,7 +152,11 @@ public class US004StepDef {
 
     @Then("Personel Basarili giris mesajini görür")
     public void personelBasariliGirisMesajiniGörür() {
-        assertTrue(Driver.getDriver().getPageSource().contains("success message to login"));
+
+        if (Driver.getDriver().getPageSource().contains("the success message ")){
+            assertTrue(true);
+
+        }else Assert.fail("the succes message yazisi görüntülenemedi");
 
     }
 
@@ -206,17 +196,9 @@ public class US004StepDef {
 
     }
 
-    @And("Kullanici Username alanina gecerli bir username girer")
-    public void kullaniciUsernameAlaninaGecerliBirUsernameGirer() {
-        us004Page.username.sendKeys(ConfigReader.getProperty("gecerliUsername4"));
 
 
-    }
 
-    @And("Kullanici Password alanina gecersiz bir password girer")
-    public void kullaniciPasswordAlaninaGecersizBirPasswordGirer() {
-        us004Page.password.sendKeys(ConfigReader.getProperty("gecersizPassword4"));
-    }
 
     @And("Kullanici Sign in butonuna tiklar")
     public void kullaniciSignInButonunaTiklar() {
@@ -231,17 +213,9 @@ public class US004StepDef {
 
     }
 
-    @And("Kullanici Username alanina gecersiz bir username girer")
-    public void kullaniciUsernameAlaninaGecersizBirUsernameGirer() {
-        us004Page.username.sendKeys(ConfigReader.getProperty("gecersizUsername4"));
 
-    }
 
-    @And("Kullanici Password alanina gecerli bir password girer")
-    public void kullaniciPasswordAlaninaGecerliBirPasswordGirer() {
-        us004Page.password.sendKeys(ConfigReader.getProperty("gecerliPassword4"));
 
-    }
 
 
     @And("{int} sn bekler")
@@ -251,5 +225,64 @@ public class US004StepDef {
     }
 
 
+    @And("Admin Username alanina gecerli bir {string} girer")
+    public void adminUsernameAlaninaGecerliBirGirer(String username) {
+        us004Page.username.sendKeys(username);
+    }
 
+    @And("Admin Password alanina gecerli bir {string} girer")
+    public void adminPasswordAlaninaGecerliBirGirer(String password) {
+        us004Page.password.sendKeys(password);
+    }
+
+    @And("Doktor Username alanina gecerli bir {string} girer")
+    public void doktorUsernameAlaninaGecerliBirGirer(String username) {
+        us004Page.username.sendKeys(username);
+    }
+
+    @And("Doktor Password alanina gecerli bir {string} girer")
+    public void doktorPasswordAlaninaGecerliBirGirer(String password) {
+        us004Page.password.sendKeys(password);
+    }
+
+    @And("Hasta Username alanina gecerli bir {string} girer")
+    public void hastaUsernameAlaninaGecerliBirGirer(String username) {
+        us004Page.username.sendKeys(username);
+    }
+
+    @And("Hasta Password alanina gecerli bir {string} girer")
+    public void hastaPasswordAlaninaGecerliBirGirer(String password) {
+        us004Page.password.sendKeys(password);
+    }
+
+    @And("Personel Username alanina gecerli bir {string} girer")
+    public void personelUsernameAlaninaGecerliBirGirer(String username) {
+        us004Page.username.sendKeys(username);
+    }
+
+    @And("Personel Password alanina gecerli bir {string} girer")
+    public void personelPasswordAlaninaGecerliBirGirer(String password) {
+        us004Page.password.sendKeys(password);
+    }
+
+    @And("Kullanici Username alanina gecerli bir {string} girer")
+    public void kullaniciUsernameAlaninaGecerliBirGirer(String username) {
+        us004Page.username.sendKeys(username);
+    }
+
+    @And("Kullanici Password alanina gecersiz bir {string} girer")
+    public void kullaniciPasswordAlaninaGecersizBirGirer(String password) {
+        us004Page.password.sendKeys(password);
+
+    }
+
+    @And("Kullanici Username alanina gecersiz bir {string} girer")
+    public void kullaniciUsernameAlaninaGecersizBirGirer(String username) {
+        us004Page.username.sendKeys(username);
+    }
+
+    @And("Kullanici Password alanina gecerli bir {string} girer")
+    public void kullaniciPasswordAlaninaGecerliBirGirer(String password) {
+        us004Page.password.sendKeys(password);
+    }
 }
