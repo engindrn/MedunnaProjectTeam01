@@ -17,7 +17,6 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-
 public class US011StepDef {
 
     US011Page page = new US011Page();
@@ -49,7 +48,7 @@ public class US011StepDef {
     @And("Doktor11 password alanina gecerli bir password girer")
     public void doktorPasswordAlaninaGecerliBirPasswordGirer() {
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("password11")).perform();
-
+        
     }
 
 
@@ -208,4 +207,14 @@ public class US011StepDef {
 
     }
 
+
 }
+
+
+/*
+List<WebElement>edit=Driver.getDriver().findElements(By.cssSelector("[class=\"form-group\"]>textarea"));
+        for (int i = 1; i <edit.size() ; i++) {
+
+
+        }
+ */

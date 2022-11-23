@@ -22,7 +22,7 @@ Feature: US011 My Appointments" Physician (Doctor) tarafından düzenlenebilmeli
     And  sayfayi11 kapatir
 
 
-  @@US011-2
+  @US011-2
   Scenario: TC002 "Bir randevu güncellendiğinde; kullanıcı (doktor), hastanın aşağıdaki bilgilerini görmelidir :
   "id, start and end date, Status, physician and patient"
     And Doktor11 acilan sayfada hastanin  ID, Start Date Time, End Date Time, Status, Physician ve Patient bilgilerinin goruldugunu dogrular
@@ -65,3 +65,17 @@ Feature: US011 My Appointments" Physician (Doctor) tarafından düzenlenebilmeli
     And  Doktor11 status alanini tiklar ve  COMPLETED opsiyonunu secer
     And  Doktor11 status alanini tiklar ve CANCELLED opsiyonunu secer
     And  sayfayi11 kapatir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
