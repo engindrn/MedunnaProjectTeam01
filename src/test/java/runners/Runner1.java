@@ -6,16 +6,17 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        plugin = {"pretty",
-                "html:target/cucumber-reports.html",
-                "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"},
-        features = "src/test/resources/features/UiFeatures/US004UI.feature",
-        glue = "stepDefinitions",
-        tags = "@us004",
-        dryRun = false
+
+    @RunWith(Cucumber.class)
+    @CucumberOptions(
+            plugin={"pretty",
+                    "html:target/cucumber-reports.html",
+                    "json:target/json-reports/cucumber.json",
+                    "junit:target/xml-report/cucumber.xml"},
+            features="src/test/resources/features/UiFeatures",
+            glue="stepDefinitions/Ui",
+            tags="@US011",
+            dryRun=false
 
 )
 //"html:target/cucumber-reports/cucumber.html",
