@@ -101,14 +101,6 @@ public class US011StepDef {
     }
 
 
-    @Then("Doktor11 the appointment is updated with identifier {int} yazisini gorur")
-    public void doktorTheAppointmentIsUpdatedWithIdentifierYazisiniGorur(int arg0) {
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(page.update));
-        Assert.assertTrue(page.update.isDisplayed());
-    }
-
 
     @And("sayfayi11 kapatir")
     public void sayfayiKapatir() {
@@ -116,18 +108,9 @@ public class US011StepDef {
     }
 
 
-    @And("Doktor11 acilan sayfada hastanin  ID, Start Date Time, End Date Time, Status, Physician ve Patient bilgilerinin goruldugunu dogrular")
-    public void doktorAcilanSayfadaHastaninIDStartDateTimeEndDateTimeStatusPhysicianVePatientBilgilerininGoruldugunuDogrular() {
-
-        Assert.assertTrue(page.hastaId.isDisplayed());
-        Assert.assertTrue(page.startDate.isDisplayed());
-        Assert.assertTrue(page.endDate.isDisplayed());
-        Assert.assertTrue(page.status.isDisplayed());
-        Assert.assertTrue(page.physician.isDisplayed());
-        Assert.assertTrue(page.patient.isDisplayed());
 
 
-    }
+
 
 
 
@@ -203,5 +186,22 @@ public class US011StepDef {
     }
 
 
+    @Then("Doktor11 the appointment is updated with identifier {int} yazisini gorur")
+    public void doktorTheAppointmentIsUpdatedWithIdentifierYazisiniGorur(int arg0) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(page.update));
+        Assert.assertTrue(page.update.isDisplayed());
+    }
+
+    @And("Doktor11 acilan sayfada hastanin  ID, Start Date Time, End Date Time, Status, Physician ve Patient bilgilerinin goruldugunu dogrular")
+    public void doktorAcilanSayfadaHastaninIDStartDateTimeEndDateTimeStatusPhysicianVePatientBilgilerininGoruldugunuDogrular() {
+
+        Assert.assertTrue(page.hastaId.isDisplayed());
+        Assert.assertTrue(page.startDate.isDisplayed());
+        Assert.assertTrue(page.endDate.isDisplayed());
+        Assert.assertTrue(page.status.isDisplayed());
+        Assert.assertTrue(page.physician.isDisplayed());
+        Assert.assertTrue(page.patient.isDisplayed());
+    }
 }
 
