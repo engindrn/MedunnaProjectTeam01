@@ -22,80 +22,80 @@ public class US013StepDef {
 
 
 
-        @Given("Personel\\(Staff) url adresine gider")
+        @Given("US013Personel\\(Staff) url adresine gider")
         public void personelStaffUrlAdresineGider() {
                 Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
         }
 
-        @When("Staff Giris simgesine tiklar")
-        public void US013staffGirisSimgesineTiklar() {
+        @When("US013Staff Giris simgesine tiklar")
+        public void staffGirisSimgesineTiklar() {
                 US013Page.accountMenuButonu.click();
         }
 
-        @And("Staff Sign in simgesine tiklar")
-        public void US013staffSignInSimgesineTiklar() {
+        @And("US013Staff Sign in simgesine tiklar")
+        public void staffSignInSimgesineTiklar() {
 
                 US013Page.signInButton.click();
         }
 
-        @And("{int} saniye bekler.")
-        public void US013saniyeBekler(int arg0) {
+        @And("US013{int} saniye bekler.")
+        public void saniyeBekler(int arg0) {
                 ReusableMethods.waitFor(3);
         }
 
-        @And("Staff Username alanina gecerli bir username girer")
-        public void US013staffUsernameAlaninaGecerliBirUsernameGirer() {
+        @And("US013Staff Username alanina gecerli bir username girer")
+        public void staffUsernameAlaninaGecerliBirUsernameGirer() {
                 US013Page.usernameTextBox.sendKeys(ConfigReader.getProperty("personelUsername012"));
         }
 
-        @And("Staff Password alanina gecerli bir password girer")
-        public void US013staffPasswordAlaninaGecerliBirPasswordGirer() {
+        @And("US013Staff Password alanina gecerli bir password girer")
+        public void staffPasswordAlaninaGecerliBirPasswordGirer() {
                 US013Page. passwordTextBox.sendKeys(ConfigReader.getProperty("password012"));
         }
 
-        @And("Staff Sign in butonuna tiklar")
-        public void US013staffSignInButonunaTiklar() {
+        @And("US013Staff Sign in butonuna tiklar")
+        public void staffSignInButonunaTiklar() {
                 US013Page.signInButton2.click();
         }
 
-        @And("Staff My Pages e tiklar")
-        public void US013staffMyPagesETiklar() {
+        @And("US013Staff My Pages e tiklar")
+        public void staffMyPagesETiklar() {
                 US013Page.personelMyPages.click();
         }
 
-        @And("Staff search Patiente tiklar")
-        public void US013staffSearchPatienteTiklar() {
+        @And("US013Staff search Patiente tiklar")
+        public void staffSearchPatienteTiklar() {
                 US013Page.searchPatient.click();
         }
 
         @And("Test sonuclarini güncelleyecegi hastanin SSN numarasini girer")
-        public void US013testSonuclariniGüncelleyecegiHastaninSSNNumarasiniGirer() {
+        public void testSonuclariniGüncelleyecegiHastaninSSNNumarasiniGirer() {
                 US013Page.patientSSN.sendKeys(ConfigReader.getProperty("hastaSSNNo"));
         }
 
-        @And("SSN ini girdigi hastada show appoitments e tiklar")
-        public void US013ssnIniGirdigiHastadaShowAppoitmentsETiklar() {
+        @And("US013SSN ini girdigi hastada show appoitments e tiklar")
+        public void ssnIniGirdigiHastadaShowAppoitmentsETiklar() {
                 US013Page.showAppointments.click();
         }
 
-        @And("Show test e tiklar")
-        public void US013showTestETiklar() {
+        @And("US013Show test e tiklar")
+        public void showTestETiklar() {
                 US013Page.showTests.click();
         }
 
-        @And("View Result a tiklar")
-        public void US013viewResultATiklar() {
+        @And("US013View Result a tiklar")
+        public void viewResultATiklar() {
                 US013Page.viewResults.click();
         }
 
-        @And("Edit e tiklar")
-        public void US013editETiklar() {
+        @And("US013Edit e tiklar")
+        public void editETiklar() {
                 US013Page.testResultEdit.click();
 
         }
 
-        @Then("Tum Resultlari\\(Sodyum,Potasyum;Glukose,Ure,Creatinine,Total Protein,Albumin ,Hemoglobin) günceller")
-        public void US013tumResultlariSodyumPotasyumGlukoseUreCreatinineTotalProteinAlbuminHemoglobinGünceller() {
+        @Then("US013Tum Resultlari\\(Sodyum,Potasyum;Glukose,Ure,Creatinine,Total Protein,Albumin ,Hemoglobin) günceller")
+        public void tumResultlariSodyumPotasyumGlukoseUreCreatinineTotalProteinAlbuminHemoglobinGünceller() {
                 Random rand = new Random();
                 String result = "";
                 for (int i = 0; i < 8; i++) {
@@ -116,48 +116,48 @@ public class US013StepDef {
         }
         }
 
-        @Given("Doktor {string} adresine gider.")
+        @Given("US013Doktor {string} adresine gider.")
         public void doktorAdresineGider(String arg0) {
                 Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
         }
 
 
-        @When("Giris simgesine tiklar.")
+        @When("US013Giris simgesine tiklar.")
         public void girisSimgesineTiklar() {
                 US013Page.accountMenuButonu.click();
         }
 
-        @And("Sign in simgesine tiklar.")
+        @And("US013Sign in simgesine tiklar.")
         public void signInSimgesineTiklar() {
                 US013Page.signInButton.click();
         }
 
-        @And("Username alanina gecerli bir username girer.")
+        @And("US013Username alanina gecerli bir username girer.")
         public void usernameAlaninaGecerliBirUsernameGirer() {
                 US013Page.usernameTextBox.sendKeys(ConfigReader.getProperty("doktorUserName012"));
         }
 
-        @And("Password alanina gecerli bir password girer.")
+        @And("US013Password alanina gecerli bir password girer.")
         public void passwordAlaninaGecerliBirPasswordGirer() {
                 US013Page. passwordTextBox.sendKeys(ConfigReader.getProperty("password012"));
         }
 
-        @And("Sign in butonuna tiklar.")
+        @And("US013Sign in butonuna tiklar.")
         public void signInButonunaTiklar() {
                 US013Page.signInButton2.click();
         }
 
-        @And("My Pages e tiklar.")
+        @And("US013My Pages e tiklar.")
         public void myPagesETiklar() {
                 US013Page.doctorMyPages.click();
         }
 
-        @And("My Appoitmente tiklar.")
+        @And("US013My Appoitmente tiklar.")
         public void myAppoitmenteTiklar() {
                 US013Page.doctorMyAppointments.click();
         }
 
-        @And("Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.")
+        @And("US013Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.")
         public void yatisiniIsteyecegiHastaninÜzerineGelipEditETiklar() {
                 WebElement submit = Driver.getDriver().
                         findElement(By.xpath("//span[@class='d-none d-md-inline']"));
@@ -166,7 +166,7 @@ public class US013StepDef {
                 jse.executeScript("arguments[0].click();", submit);
         }
 
-        @And("Acilan sayfada {string} e tiklar.")
+        @And("US013Acilan sayfada {string} e tiklar.")
         public void acilanSayfadaETiklar(String arg0) {
                 US013Page.RequestInpatient.click();
         }
