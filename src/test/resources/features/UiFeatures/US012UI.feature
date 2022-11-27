@@ -4,7 +4,7 @@ Feature: US012 Physician (Doktor) test isteyebilmeli (My Appoitments/Edit/Reques
 
   @US012TC001
   Scenario:TC01 Doktor test isteyebilmeli "Request A Test"
-    Given Doktor "medunnaUrl" adresine gider
+    Given Doktor url adresine gider
     And 3 saniye bekler
     When Giris simgesine tiklar
     And 3 saniye bekler
@@ -28,7 +28,7 @@ Feature: US012 Physician (Doktor) test isteyebilmeli (My Appoitments/Edit/Reques
 
   @US012TC002
   Scenario: TC02 Test iceriginde "Glucose,Urea,Creatinine,Sodium,Potassium,Total Protein,Albumin,Hemoglobin" secenekleri olmalidir
-    Given Doktor "medunnaUrl" adresine gider
+    Given Doktor url adresine gider
     And 3 saniye bekler
     When Giris simgesine tiklar
     And 3 saniye bekler

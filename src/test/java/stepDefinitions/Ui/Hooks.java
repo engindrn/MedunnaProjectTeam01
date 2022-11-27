@@ -29,6 +29,9 @@ scenario'lar için screenshoot olmasi amaciyla
 
      */
 
+
+
+
     @After
     public void tearDown(Scenario scenario) throws IOException {
         final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
