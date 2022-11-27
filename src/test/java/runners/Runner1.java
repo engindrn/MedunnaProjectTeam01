@@ -13,9 +13,9 @@ import org.junit.runner.RunWith;
                     "html:target/cucumber-reports.html",
                     "json:target/json-reports/cucumber.json",
                     "junit:target/xml-report/cucumber.xml"},
-            features="src/test/resources/features/UiFeatures",
+            features="src/test/resources/features/DbFeatures/US010DB.feature",
             glue="stepDefinitions",
-            tags = "@US011",
+            tags = "@US10_DBTest",
             dryRun=false
 
 )
