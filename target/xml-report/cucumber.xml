@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="85.467">
     <testcase classname="US011 My Appointments&quot; Physician (Doctor) tarafından düzenlenebilmeli" name="TC001 Doktor &quot;Create or edit an appointment&quot; işlemlerini yapar" time="20.696">
         <system-out>
@@ -109,3 +110,6 @@ And sayfayi11 kapatir.......................................................pass
         </system-out>
     </testcase>
 </testsuite>
+=======
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.193"/>
+>>>>>>> mihrican
