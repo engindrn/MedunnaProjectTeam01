@@ -101,37 +101,18 @@ public class US011StepDef {
     }
 
 
-    @Then("Doktor11 the appointment is updated with identifier {int} yazisini gorur")
-    public void doktorTheAppointmentIsUpdatedWithIdentifierYazisiniGorur(int arg0) {
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(page.update));
-        Assert.assertTrue(page.update.isDisplayed());
-    }
-
 
     @And("sayfayi11 kapatir")
     public void sayfayiKapatir() {
         Driver.closeDriver();
     }
 
-    // TC_002
-
-    @And("Doktor11 acilan sayfada hastanin  ID, Start Date Time, End Date Time, Status, Physician ve Patient bilgilerinin goruldugunu dogrular")
-    public void doktorAcilanSayfadaHastaninIDStartDateTimeEndDateTimeStatusPhysicianVePatientBilgilerininGoruldugunuDogrular() {
-
-        Assert.assertTrue(page.hastaId.isDisplayed());
-        Assert.assertTrue(page.startDate.isDisplayed());
-        Assert.assertTrue(page.endDate.isDisplayed());
-        Assert.assertTrue(page.status.isDisplayed());
-        Assert.assertTrue(page.physician.isDisplayed());
-        Assert.assertTrue(page.patient.isDisplayed());
 
 
-    }
 
 
-    // TC_003
+
+
 
     @And("Doktor11 Anamnesis, Treatment ve Diagnosis alanlarini bos birakir")
     public void doktorAnamnesisTreatmentVeDiagnosisAlanlariniBosBirakir() throws InterruptedException {
@@ -159,7 +140,6 @@ public class US011StepDef {
     }
 
 
-    // TC_004.1
 
     @And("Doktor11 prescription ve description alanlarini bos birakir")
     public void doktorPrescriptionVeDescriptionAlanlariniBosBirakir() {
@@ -169,7 +149,6 @@ public class US011StepDef {
 
     }
 
-    // US_004.2
 
     @And("Doktor11 prescription ve description alanlarina bilgiler girer")
     public void doktorPrescriptionVeDescriptionAlanlarinaBilgilerGirer() throws InterruptedException {
@@ -182,7 +161,6 @@ public class US011StepDef {
     }
 
 
-    // US_005
 
     @And("Doktor11 status alanini tiklar ve PENDING opsiyonunu secer")
     public void doktorStatusAlaniniTiklarVePENDINGOpsiyonunuSecer() {
@@ -208,13 +186,22 @@ public class US011StepDef {
     }
 
 
+    @Then("Doktor11 the appointment is updated with identifier {int} yazisini gorur")
+    public void doktorTheAppointmentIsUpdatedWithIdentifierYazisiniGorur(int arg0) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(page.update));
+        Assert.assertTrue(page.update.isDisplayed());
+    }
+
+    @And("Doktor11 acilan sayfada hastanin  ID, Start Date Time, End Date Time, Status, Physician ve Patient bilgilerinin goruldugunu dogrular")
+    public void doktorAcilanSayfadaHastaninIDStartDateTimeEndDateTimeStatusPhysicianVePatientBilgilerininGoruldugunuDogrular() {
+
+        Assert.assertTrue(page.hastaId.isDisplayed());
+        Assert.assertTrue(page.startDate.isDisplayed());
+        Assert.assertTrue(page.endDate.isDisplayed());
+        Assert.assertTrue(page.status.isDisplayed());
+        Assert.assertTrue(page.physician.isDisplayed());
+        Assert.assertTrue(page.patient.isDisplayed());
+    }
 }
 
-
-/*
-List<WebElement>edit=Driver.getDriver().findElements(By.cssSelector("[class=\"form-group\"]>textarea"));
-        for (int i = 1; i <edit.size() ; i++) {
-
-
-        }
- */
