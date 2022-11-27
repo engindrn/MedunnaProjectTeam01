@@ -3,7 +3,6 @@ package stepDefinitions.Db;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import utilities.DatabaseUtility;
 
 import java.util.Map;
 
