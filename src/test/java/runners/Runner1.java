@@ -1,38 +1,46 @@
-package runners;
 
+
+package runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html:target/cucumber-reports.html",
+        plugin = {"pretty",
+                "html:target/cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml"
-        },
-
+                "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features/UiFeatures",
-        glue = "stepDefinitions/Ui",
-        tags = "@US_003_TC_001",
+        glue = "stepDefinitions",
+        tags = "@US10_DBTest",
         dryRun = false
+
 )
+//"html:target/cucumber-reports/cucumber.html",
+//"json:target/cucumber-reports/cucumber.json"
 
 public class Runner1 {
-    /*
-    Bir framework'de bir tek Runner class'i yeterli olabilir
-    Runner class'indan class bodysinde hic bir sey olmaz
-    Runner class'imizi onemli yapan iki adet annotation vardir
-    @RunWith(Cucumber.class) notasyonu Runner class'ina calisma ozelligi katar
-    Bu notasyon oldugu icin Cucumber framework'umuzde JUnit kullanmayi tercih ediyoruz
 
-    features : Runner dosyasinin feature dosyalarini nereden bulacagini tarif eder
-    glue : stepdefinitions dosyalarini nerede bulacagimizi gosterir
-    tags : o an hangi tag'i calistirmak istiyorsak onu belli eder
+   /*
 
-    dryRun : iki secenek var
-    dryRun=true; yazdigimiz Testimizi calistirmadan sadece eksik adimlari bize verir
-    dryRun=false; yazdigimizda testlerimizi calistirir
+Bir frameworkte bir tek Runner Class'i yeterli olabilir.
+Runner class'inda hic bir sey olmaz
+Runner classimizi onemli yapan iki adet annotain vardir
+@RunWith(Cucumber.class) notasyonu Runner Class'ina calsima ozelligi katar
+Bu notasyon oldugu icin Cucumber framework'umuzde JUnit kullanmayi tercih ediyoruz
 
-     */
+features : Runner dosyasinin feature dosyalarini nereden bulacagini tarif eder
+glue : step definitions dosyalarini nerede bulacagimizi gosterir
+tags : o an hangi tag'i calsitirmak istiyorsak onu belli eder
+
+dryRun : iki secenek var
+dryRun=true; yazdigimizda Testimizi calistirmadan sadece eksik adimlari bize verir.
+DryRun=false; default ayaridir. testlerimizi calistirir
+
+ */
+
 }
+
