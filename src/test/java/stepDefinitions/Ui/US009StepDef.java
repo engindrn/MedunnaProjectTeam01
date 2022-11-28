@@ -24,64 +24,51 @@ import java.util.List;
 public class US009StepDef {
 
     US009Page us009Page = new US009Page();
-    Actions actions = new Actions(Driver.getDriver());
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
-    String eskiFirstname;
-    String eskiLastname;
-    String eskiBirthDate;
-    String eskiPhone;
-    String eskiEmail;
-    String eskiGender;
-    String eskiBloodGroup;
-    String eskiAddress;
-    String eskiDescription;
-    String eskiUser;
-    String eskiCountry;
-    String eskiCity;
 
-    @Given("Personel Medunna ana sayfasinda")
+    @Given("Personel09 Medunna ana sayfasinda")
     public void personel_medunna_ana_sayfasinda() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl09"));
     }
 
-    @When("Personel Giris simgesini tiklar")
+    @When("Personel09 Giris simgesini tiklar")
     public void personel_giris_simgesini_tiklar() {
         us009Page.girisSimgesi.click();
 
     }
 
-    @And("Personel Sign in simgesini tiklar")
+    @And("Personel09 Sign in simgesini tiklar")
     public void personel_sign_in_simgesini_tiklar() {
         us009Page.signIn.click();
 
     }
 
-    @And("Personel username alanina gecerli bir username girer")
+    @And("Personel09 username alanina gecerli bir username girer")
     public void personel_username_alanina_gecerli_bir_username_girer() {
         us009Page.username.sendKeys(ConfigReader.getProperty("personelUserName09"));
 
     }
 
-    @And("Personel password alanina gecerli bir password girer")
+    @And("Personel09 password alanina gecerli bir password girer")
     public void personel_password_alanina_gecerli_bir_password_girer() {
         us009Page.password.sendKeys(ConfigReader.getProperty("personelPassword09"));
 
     }
 
-    @And("Personel Signin butonuna tiklar")
+    @And("Personel09 Signin butonuna tiklar")
     public void personel_signin_butonuna_tiklar() {
         us009Page.signInButton.click();
 
     }
 
-    @And("Personel My Pages butonunu tiklar")
+    @And("Personel09 My Pages butonunu tiklar")
     public void personel_my_pages_butonunu_tiklar() {
         us009Page.myPages.click();
 
     }
 
-    @And("Personel Patient butonuna tiklar")
+    @And("Personel09 Patient butonuna tiklar")
     public void personel_patient_butonuna_tiklar() {
         us009Page.searchPatient.click();
 
@@ -94,7 +81,6 @@ public class US009StepDef {
 
 
     }
-
 
 
     @Then("Aranan SSN numarali hastanin bilgilerinin goruldugunu dogrular")
@@ -115,34 +101,10 @@ public class US009StepDef {
         Driver.getDriver().findElement(By.xpath("(//dd)[13]")).isDisplayed();
 
 
-        eskiFirstname=Driver.getDriver().findElement(By.xpath("(//dd)[2]")).getText();
-        eskiLastname=Driver.getDriver().findElement(By.xpath("(//dd)[3]")).getText();
-        eskiBirthDate=Driver.getDriver().findElement(By.xpath("(//dd)[4]")).getText();
-        eskiPhone=Driver.getDriver().findElement(By.xpath("(//dd)[2]")).getText();
-        eskiEmail=Driver.getDriver().findElement(By.xpath("(//dd)[5]")).getText();
-        eskiGender=Driver.getDriver().findElement(By.xpath("(//dd)[6]")).getText();
-        eskiBloodGroup=Driver.getDriver().findElement(By.xpath("(//dd)[7]")).getText();
-        eskiAddress=Driver.getDriver().findElement(By.xpath("(//dd)[8]")).getText();
-        eskiDescription=Driver.getDriver().findElement(By.xpath("(//dd)[9]")).getText();
-        eskiUser=Driver.getDriver().findElement(By.xpath("(//dd)[11]")).getText();
-        eskiCountry=Driver.getDriver().findElement(By.xpath("(//dd)[12]")).getText();
-        eskiCity=Driver.getDriver().findElement(By.xpath("(//dd)[13]")).getText();
-
-
-
-        System.out.println(us009Page.viewFirstName.getText());
-        System.out.println(us009Page.viewLastName.getText());
-        System.out.println(us009Page.viewEmail.getText());
-
-
-
-
-        ////*[text()='123-45-4545']
-
     }
 
 
-    @And("Personel girilen SSN Numarali hastada edit butonuna tiklar")
+    @And("Personel09 girilen SSN Numarali hastada edit butonuna tiklar")
     public void personelGirilenSSNNumaraliHastadaEditButonunaTiklar() {
         us009Page.editPatient.click();
     }
@@ -271,7 +233,6 @@ public class US009StepDef {
         System.out.println("");
         System.out.println("====");
 
-        //us009Page.cityState01.sendKeys(ConfigReader.getProperty("stateCity01"));
 
     }
 
@@ -282,67 +243,40 @@ public class US009StepDef {
     }
 
     @And("Patient is Updated yazisini gorur")
-    public void patientIsUpdatedYazisiniGorur() {
+    public void patientIsUpdatedYazisiniGorur() throws InterruptedException {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(us009Page.updatedYazisi));
         Assert.assertTrue(us009Page.updatedYazisi.isDisplayed());
-        //us009Page.updatedYazisi.isDisplayed();
+
 
     }
 
-    @Then("Tum Hasta bilgilerinin degistigini dogrular")
+    @Then("Hasta bilgilerinin degistigini dogrular")
     public void tumHastaBilgilerininDegistiginiDogrular() throws InterruptedException {
-        //(//dt/span)[3]
-        //(//dd)[2]
-       // System.out.println("+++++");
-//
-       // us009Page.backButon.click();
-       // us009Page.viewPatient.click();
+
         Thread.sleep(1000);
 
 
-        String yeniFirstname=Driver.getDriver().findElement(By.xpath("(//dd)[2]")).getText();
-        String yeniLastname=Driver.getDriver().findElement(By.xpath("(//dd)[3]")).getText();
-        String yeniBirthDate=Driver.getDriver().findElement(By.xpath("(//dd)[4]")).getText();
-        String yeniPhone=Driver.getDriver().findElement(By.xpath("(//dd)[2]")).getText();
-        String yeniEmail=Driver.getDriver().findElement(By.xpath("(//dd)[5]")).getText();
-        String yeniGender=Driver.getDriver().findElement(By.xpath("(//dd)[6]")).getText();
-        String yeniBloodGroup=Driver.getDriver().findElement(By.xpath("(//dd)[7]")).getText();
-        String yeniAddress=Driver.getDriver().findElement(By.xpath("(//dd)[8]")).getText();
-        String yeniDescription=Driver.getDriver().findElement(By.xpath("(//dd)[9]")).getText();
-        String yeniUser=Driver.getDriver().findElement(By.xpath("(//dd)[11]")).getText();
-        String yeniCountry=Driver.getDriver().findElement(By.xpath("(//dd)[12]")).getText();
-        String yeniCity=Driver.getDriver().findElement(By.xpath("(//dd)[13]")).getText();
+        String yeniFirstname = Driver.getDriver().findElement(By.xpath("(//dd)[2]")).getText();
+        String yeniLastname = Driver.getDriver().findElement(By.xpath("(//dd)[3]")).getText();
+        String yeniGender = Driver.getDriver().findElement(By.xpath("(//dd)[6]")).getText();
+        String yeniBloodGroup = Driver.getDriver().findElement(By.xpath("(//dd)[7]")).getText();
+        String yeniAddress = Driver.getDriver().findElement(By.xpath("(//dd)[8]")).getText();
+        String yeniDescription = Driver.getDriver().findElement(By.xpath("(//dd)[9]")).getText();
+        String yeniUser = Driver.getDriver().findElement(By.xpath("(//dd)[11]")).getText();
+        String yeniCountry = Driver.getDriver().findElement(By.xpath("(//dd)[12]")).getText();
+        String yeniCity = Driver.getDriver().findElement(By.xpath("(//dd)[13]")).getText();
 
-
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[1]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[2]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[3]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[4]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[5]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[6]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[7]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[8]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[9]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[10]")).getText());
-    //  System.out.println(Driver.getDriver().findElement(By.xpath("(//dd)[11]")).getText());
-
-
-     //  Assert.assertNotEquals(eskiFirstname,yeniFirstname);
-     //  Assert.assertNotEquals(eskiLastname,yeniLastname);
-     //  //Assert.assertNotEquals(eskiBirthDate,yeniBirthDate);
-     //  Assert.assertNotEquals(eskiPhone,yeniPhone);
-     //  Assert.assertNotEquals(eskiEmail,yeniEmail);
-     //  Assert.assertNotEquals(eskiGender,yeniGender);
-     //  Assert.assertNotEquals(eskiBloodGroup,yeniBloodGroup);
-     //  Assert.assertNotEquals(eskiAddress,yeniAddress);
-     //  Assert.assertNotEquals(eskiDescription,yeniDescription);
-     //  Assert.assertNotEquals(eskiUser,yeniUser);
-     //  Assert.assertEquals(eskiCountry,yeniCountry);
-     //  Assert.assertEquals(eskiCity,yeniCity);
-
-
+        Assert.assertEquals("yeniFirstName", yeniFirstname);
+        Assert.assertEquals("yeniLastName", yeniLastname);
+        Assert.assertEquals("MALE", yeniGender);
+        Assert.assertEquals("Bnegative", yeniBloodGroup);
+        Assert.assertEquals("yeniAdres str. 5", yeniAddress);
+        Assert.assertEquals("Description degisti", yeniDescription);
+        Assert.assertNotEquals("mustafa_personel", yeniUser);
+        Assert.assertEquals("Germany", yeniCountry);
+        Assert.assertNotEquals("Berlin", yeniCity);
 
 
     }
@@ -388,12 +322,9 @@ public class US009StepDef {
         Assert.assertTrue(us009Page.updatedYazisi.isDisplayed());
 
 
-
         String expectedData = "";
         String actualData = Driver.getDriver().findElement(By.xpath("(//dd)[9]")).getText();
         Assert.assertEquals(expectedData, actualData);
-        //Assert.assertFalse(us009Page.viewPatient.isEnabled());
-        //Assert.assertTrue(!us009Page.viewDescription.isDisplayed());
 
 
     }
