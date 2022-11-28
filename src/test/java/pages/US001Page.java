@@ -9,6 +9,7 @@ import utilities.Driver;
 
 
 import static org.junit.Assert.assertTrue;
+import static utilities.ReusableMethods.waitFor;
 
 public class US001Page {
     public US001Page() {
@@ -41,7 +42,7 @@ public class US001Page {
         return this;
     }
 
-    @FindBy(xpath = "//div[text()='Your SSN is required.']")
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
     public WebElement ssnRequiredMessage;
 
     public US001Page ssnRequiredMessage() {
@@ -50,20 +51,18 @@ public class US001Page {
     }
 
     public US001Page falseSsn(String karekter, String harf) throws InterruptedException {
-        Thread.sleep(3000);
+
         ssnTextBox.sendKeys(karekter + Keys.TAB);
+        waitFor(2);
         assertTrue(ssnInvalidMessage.isDisplayed());
         Driver.getDriver().navigate().refresh();
-        Thread.sleep(3000);
         ssnTextBox.sendKeys(harf + Keys.TAB);
+        waitFor(2);
         assertTrue(ssnInvalidMessage.isDisplayed());
-        Driver.getDriver().navigate().refresh();
-        Thread.sleep(3000);
 
 
         return this;
     }
-
 
 
     @FindBy(xpath = "//div[text()='Your SSN is invalid']")
@@ -84,14 +83,12 @@ public class US001Page {
         Thread.sleep(3000);
         ssnTextBox.sendKeys(sayi2 + Keys.TAB);
         assertTrue(ssnInvalidMessage.isDisplayed());
-        Thread.sleep(3000);
-        Driver.getDriver().navigate().refresh();
-
+        Thread.sleep(2000);
 
         return this;
     }
 
-    @FindBy(xpath = "//*[@class='is-touched is-dirty av-valid form-control']")
+    @FindBy(xpath = "//input[@name='ssn']")
 
     public WebElement ValidSSn;
 
@@ -130,16 +127,12 @@ public class US001Page {
         return this;
     }
 
-    // @FindBy(xpath = "//input[@class='is-touched is-dirty av-valid form-control']")
-    // public WebElement firstNameValidConfirm;
 
     public US001Page firstNameValidConfirm() {
         assertTrue(ValidSSn.isDisplayed());
         return this;
     }
 
-    //input[@name='lastName']
-    //div[text()='Your LastName is required.']
 
     @FindBy(xpath = "//input[@name='lastName']")
     public WebElement lastNameTextBox;
@@ -152,6 +145,7 @@ public class US001Page {
         return this;
     }
     public US001Page GecerlilastName() {
+        waitFor(2);
         lastNameTextBox.sendKeys(faker.name().lastName());
         return this;
     }
@@ -162,54 +156,6 @@ public class US001Page {
         assertTrue(lastNameRequiredMessage.isDisplayed());
         return this;
     }
-    public US001Page lastNameValidConfirm() {
-        assertTrue(ValidSSn.isDisplayed());
-        return this;
-    }
-    @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
-    public WebElement anaSayfaGirisIkonu;
-
-    @FindBy(xpath = "//a[@id='login-item']")
-    public WebElement anaSayfaSignIn;
-
-    @FindBy(xpath = "//input[@id='username']")
-    public WebElement UserNameBox;
-
-    @FindBy(xpath = "//input[@id='password']")
-    public WebElement passwordBox;
-
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement signIn;
-
-    @FindBy(xpath = "//li[@id='account-menu']//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
-    public WebElement cikisIconu;
-
-    @FindBy(xpath = "//span[normalize-space()='Sign out']")
-    public WebElement signOutButton;
-
-    @FindBy(xpath = "//span[normalize-space()='Remember me']")
-    public WebElement rememberMe;
-
-    @FindBy(xpath = "//span[normalize-space()='Did you forget your password?']")
-    public WebElement forgetYourPassword;
-
-    @FindBy(xpath = "//div[@role='dialog']//div[4]")
-    public WebElement registeraNewAccount;
-
-    @FindBy(xpath = "//button[@class='btn btn-secondary']")
-    public WebElement cancelButton;
-    @FindBy(xpath = "//li[@id='account-menu']//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
-    public WebElement kullaniciMenusu;
-
-    @FindBy(xpath = "//span[normalize-space()='Settings']")
-    public WebElement kullaniciSettingsButton;
-
-
-    @FindBy(xpath = "//li[@id='account-menu']//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
-    public WebElement cikisButton;
-
-    @FindBy(xpath = "//a[@class='dropdown-item active']")
-    public WebElement passwordChangeButton;
 
 
 }

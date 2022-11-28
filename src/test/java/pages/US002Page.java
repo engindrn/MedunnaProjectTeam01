@@ -21,11 +21,27 @@ public class US002Page {
     Faker faker = new Faker();
 
 
+    @FindBy(xpath = "//input[@name='lastName']")
+    public WebElement LastNameTextBox;
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement usernameTextBox;
+    @FindBy(xpath = " //input[@name='email']")
+    public WebElement EmailTextBox;
+    @FindBy(xpath = "//input[@name='firstPassword']")
+    public WebElement firstPassTextBox;
+    @FindBy(xpath = "//div[text()='Your email is required.']")
+    public WebElement emailRequiredMsj;
+
+
+
+
     @FindBy(xpath = "//input[@name='username']")
     public WebElement userNameTextBox;
     public US002Page userNameTextBox() {
+        /*
         JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0,300)");
+         */
         userNameTextBox.click();
         return this;
     }
@@ -63,7 +79,7 @@ public class US002Page {
         js.executeScript("window.scrollBy(0,300)");
         ReusableMethods.waitFor(2);
         userNameTextBox.sendKeys(username+ Keys.TAB);
-        Assert.assertTrue(userNameValidConfirm.isDisplayed());
+        //Assert.assertTrue(userNameValidConfirm.isDisplayed());
 
         ReusableMethods.waitFor(2);
 
@@ -113,8 +129,23 @@ public class US002Page {
 
 
         emailTextBox.sendKeys(mail);
+
         return this;
-        ///oooooo
+
+    }
+    public US002Page GecersizEmail2(String mail1, String mail2) throws InterruptedException {
+
+        Thread.sleep(3000);
+        emailTextBox.sendKeys(mail1+Keys.TAB);
+        assertTrue(emailInvalidMessage.isDisplayed());
+        Thread.sleep(3000);
+        Driver.getDriver().navigate().refresh();
+        Thread.sleep(3000);
+        emailTextBox.sendKeys(mail2 + Keys.TAB);
+        assertTrue(emailInvalidMessage.isDisplayed());
+        Thread.sleep(2000);
+        return this;
+
     }
 
     @FindBy(xpath = "//div[text()='Your email is required.']")
