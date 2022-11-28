@@ -1,115 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="85.467">
-    <testcase classname="US011 My Appointments&quot; Physician (Doctor) tarafından düzenlenebilmeli" name="TC001 Doktor &quot;Create or edit an appointment&quot; işlemlerini yapar" time="20.696">
-        <system-out>
-            <![CDATA[Given Doktor11 medunna sayfasina gider......................................passed
-Then Doktor11 kisi simgesinin uzerine tiklar................................passed
-And Doktor11 acilan pencerede Sign in ' in uzerine tiklar...................passed
-Then Doktor11 username alanina gecerli bir username girer...................passed
-And Doktor11 password alanina gecerli bir password girer....................passed
-And Doktor11 Sign in butonuna tiklar........................................passed
-And Doktor11 my pages sekmesine tiklar......................................passed
-And Doktor11 acilan pencerede my appointments sekmesine tiklar..............passed
-And Doktor11  edit butonuna tiklar..........................................passed
-And Doktor11 Create or Edit an Appoinment yazisini gorur....................passed
-And Doktor11 status alanindan bir opsiyon secer.............................passed
-And Doktor11 save butotuna tiklar...........................................passed
-Then Doktor11 the appointment is updated with identifier 343044 yazisini gorur.passed
-And sayfayi11 kapatir.......................................................passed
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="45.264">
+    <testcase classname="US013 Physician (Doktor) &quot;Test Results&quot; işlemleri yapabilmeli(My Appointments / Edit / Test Results)" name="TC001 Testler talep edildikten sonra Staff  test sonuclarini güncellemelidir" time="27.271">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given Personel(Staff) url adresine gider....................................undefined
+When Staff Giris simgesine tiklar...........................................skipped
+And Staff Sign in simgesine tiklar..........................................skipped
+And 3 saniye bekler.........................................................skipped
+And Staff Username alanina gecerli bir username girer.......................skipped
+And 3 saniye bekler.........................................................skipped
+And Staff Password alanina gecerli bir password girer.......................skipped
+And 3 saniye bekler.........................................................skipped
+And Staff Sign in butonuna tiklar...........................................skipped
+And 3 saniye bekler.........................................................skipped
+And Staff My Pages e tiklar.................................................skipped
+And 3 saniye bekler.........................................................skipped
+And Staff search Patiente tiklar............................................skipped
+And 3 saniye bekler.........................................................skipped
+And Test sonuclarini güncelleyecegi hastanin SSN numarasini girer...........skipped
+And 3 saniye bekler.........................................................skipped
+And SSN ini girdigi hastada show appoitments e tiklar.......................skipped
+And 3 saniye bekler.........................................................skipped
+And Show test e tiklar......................................................skipped
+And 3 saniye bekler.........................................................skipped
+And View Result a tiklar....................................................skipped
+And 3 saniye bekler.........................................................skipped
+And Edit e tiklar...........................................................skipped
+And 3 saniye bekler.........................................................skipped
+Then Tum Resultlari(Sodyum,Potasyum;Glukose,Ure,Creatinine,Total Protein,Albumin ,Hemoglobin) günceller.skipped
 ]]>
-        </system-out>
+        </failure>
     </testcase>
-    <testcase classname="US011 My Appointments&quot; Physician (Doctor) tarafından düzenlenebilmeli" name="TC002 &quot;Bir randevu güncellendiğinde; kullanıcı (doktor), hastanın aşağıdaki bilgilerini görmelidir :" time="9.008">
-        <system-out>
-            <![CDATA[Given Doktor11 medunna sayfasina gider......................................passed
-Then Doktor11 kisi simgesinin uzerine tiklar................................passed
-And Doktor11 acilan pencerede Sign in ' in uzerine tiklar...................passed
-Then Doktor11 username alanina gecerli bir username girer...................passed
-And Doktor11 password alanina gecerli bir password girer....................passed
-And Doktor11 Sign in butonuna tiklar........................................passed
-And Doktor11 my pages sekmesine tiklar......................................passed
-And Doktor11 acilan pencerede my appointments sekmesine tiklar..............passed
-And Doktor11 acilan sayfada hastanin  ID, Start Date Time, End Date Time, Status, Physician ve Patient bilgilerinin goruldugunu dogrular.passed
-And sayfayi11 kapatir.......................................................passed
+    <testcase classname="US013 Physician (Doktor) &quot;Test Results&quot; işlemleri yapabilmeli(My Appointments / Edit / Test Results)" name="TC002 &quot;Request Impatient&quot; (hastanin yatili tedavi görmesi )  isteginde bulunabilmelidir" time="14.572">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given Doktor "medunnaUrl" adresine gider....................................undefined
+When Giris simgesine tiklar.................................................skipped
+And Sign in simgesine tiklar................................................skipped
+And Username alanina gecerli bir username girer.............................skipped
+And Password alanina gecerli bir password girer.............................skipped
+And Sign in butonuna tiklar.................................................skipped
+And My Pages e tiklar.......................................................skipped
+And My Appoitmente tiklar...................................................skipped
+And Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar................skipped
+And Acilan sayfada "Request Inpatient" e tiklar.............................skipped
 ]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US011 My Appointments&quot; Physician (Doctor) tarafından düzenlenebilmeli" name="TC003 Doktor &quot;Anamnesis, Treatment ve Diagnosis&quot; alanlarını doldurmak zorundadır" time="10.367">
-        <system-out>
-            <![CDATA[Given Doktor11 medunna sayfasina gider......................................passed
-Then Doktor11 kisi simgesinin uzerine tiklar................................passed
-And Doktor11 acilan pencerede Sign in ' in uzerine tiklar...................passed
-Then Doktor11 username alanina gecerli bir username girer...................passed
-And Doktor11 password alanina gecerli bir password girer....................passed
-And Doktor11 Sign in butonuna tiklar........................................passed
-And Doktor11 my pages sekmesine tiklar......................................passed
-And Doktor11 acilan pencerede my appointments sekmesine tiklar..............passed
-And Doktor11  edit butonuna tiklar..........................................passed
-And Doktor11 Anamnesis, Treatment ve Diagnosis alanlarini bos birakir.......passed
-And Doktor11 save butotuna tiklar...........................................passed
-And Doktor11 Anemnesis bolumunde This field is required yazisini gorur......passed
-And Doktor11 Treatment bolumunde This field is required yazisini gorur......passed
-And Doktor11 Diagnosis bolumunde This field is required yazisini gorur......passed
-And sayfayi11 kapatir.......................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US011 My Appointments&quot; Physician (Doctor) tarafından düzenlenebilmeli" name="&quot;Prescription ve description&quot; isteğe bağlı olmalıdır." time="9.262">
-        <system-out>
-            <![CDATA[Given Doktor11 medunna sayfasina gider......................................passed
-Then Doktor11 kisi simgesinin uzerine tiklar................................passed
-And Doktor11 acilan pencerede Sign in ' in uzerine tiklar...................passed
-Then Doktor11 username alanina gecerli bir username girer...................passed
-And Doktor11 password alanina gecerli bir password girer....................passed
-And Doktor11 Sign in butonuna tiklar........................................passed
-And Doktor11 my pages sekmesine tiklar......................................passed
-And Doktor11 acilan pencerede my appointments sekmesine tiklar..............passed
-And Doktor11  edit butonuna tiklar..........................................passed
-And Doktor11 prescription ve description alanlarini bos birakir.............passed
-And Doktor11 save butotuna tiklar...........................................passed
-And Doktor11 the appointment is updated with identifier 343044 yazisini gorur.passed
-And sayfayi11 kapatir.......................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US011 My Appointments&quot; Physician (Doctor) tarafından düzenlenebilmeli" name="&quot;Prescription ve description&quot; isteğe bağlı olmalıdır. 2" time="27.104">
-        <system-out>
-            <![CDATA[Given Doktor11 medunna sayfasina gider......................................passed
-Then Doktor11 kisi simgesinin uzerine tiklar................................passed
-And Doktor11 acilan pencerede Sign in ' in uzerine tiklar...................passed
-Then Doktor11 username alanina gecerli bir username girer...................passed
-And Doktor11 password alanina gecerli bir password girer....................passed
-And Doktor11 Sign in butonuna tiklar........................................passed
-And Doktor11 my pages sekmesine tiklar......................................passed
-And Doktor11 acilan pencerede my appointments sekmesine tiklar..............passed
-And Doktor11  edit butonuna tiklar..........................................passed
-And Doktor11 prescription ve description alanlarina bilgiler girer..........passed
-And Doktor11 save butotuna tiklar...........................................passed
-And Doktor11 the appointment is updated with identifier 343044 yazisini gorur.passed
-And sayfayi11 kapatir.......................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US011 My Appointments&quot; Physician (Doctor) tarafından düzenlenebilmeli" name="&quot;Status&quot; doktor tarafından &quot;PENDING, COMPLETED veya CANCELLED&quot; olarak seçilebilmelidir." time="8.5">
-        <system-out>
-            <![CDATA[Given Doktor11 medunna sayfasina gider......................................passed
-Then Doktor11 kisi simgesinin uzerine tiklar................................passed
-And Doktor11 acilan pencerede Sign in ' in uzerine tiklar...................passed
-Then Doktor11 username alanina gecerli bir username girer...................passed
-And Doktor11 password alanina gecerli bir password girer....................passed
-And Doktor11 Sign in butonuna tiklar........................................passed
-And Doktor11 my pages sekmesine tiklar......................................passed
-And Doktor11 acilan pencerede my appointments sekmesine tiklar..............passed
-And Doktor11  edit butonuna tiklar..........................................passed
-And Doktor11 status alanini tiklar ve PENDING opsiyonunu secer..............passed
-And Doktor11 status alanini tiklar ve  COMPLETED opsiyonunu secer...........passed
-And Doktor11 status alanini tiklar ve CANCELLED opsiyonunu secer............passed
-And sayfayi11 kapatir.......................................................passed
-]]>
-        </system-out>
+        </failure>
     </testcase>
 </testsuite>
-=======
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.193"/>
->>>>>>> mihrican
