@@ -17,8 +17,8 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
-      <charset value="UTF-8" />
-      <charset value="UTF-8" />
+      <charset value="windows-1252" />
+      <charset value="windows-1252" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -28,7 +28,11 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
+
     <connection id="6bd34630-135f-43a2-ab5f-d4a05e7459e1">
+
+    <connection id="27fd44af-8b6f-42af-88d6-f653ecc1f88f">
+
       <console name="Medunna" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
@@ -36,7 +40,7 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="6bd34630-135f-43a2-ab5f-d4a05e7459e1" />
+    <connection id="27fd44af-8b6f-42af-88d6-f653ecc1f88f" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -67,7 +71,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="6bd34630-135f-43a2-ab5f-d4a05e7459e1" active="true" signed="true">
+      <connection id="27fd44af-8b6f-42af-88d6-f653ecc1f88f" active="true" signed="true">
         <database>
           <name value="Medunna" />
           <description value="" />
@@ -192,7 +196,6 @@
         <object-type name="FUNCTİON" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
-        <object-type name="TYPE ATTRİBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
         <object-type name="VİEW" editor-type="SELECTION" />
