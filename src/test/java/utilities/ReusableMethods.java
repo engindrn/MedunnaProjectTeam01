@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,8 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
+
 public class ReusableMethods {
     //========ScreenShot(Syafanın resmini alma)=====//
     public static String getScreenshot(String name) throws IOException {
@@ -112,6 +115,37 @@ public class ReusableMethods {
                 waitFor(1);
             }
         }
+    }
+    public static WebElement waitForClickable(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }//
+
+    public static WebElement waitForClickable(By locator, int timeout) {
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    public static void jsScrollClick(WebElement webElement) {  //kaydir ve tikla
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        try {
+            webElement.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+            js.executeScript("arguments[0].click()", webElement);
+        }
+    }
+    public static Random random() {
+
+        Random random;
+        return random = new Random();
+    }
+    public static Select select(WebElement ddm) { //select method
+
+        Select select;
+
+        return select = new Select(ddm);
     }
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {

@@ -18,9 +18,7 @@ import java.util.Random;
 
 public class US013StepDef {
 
-
-
-
+      US013Page page = new US013Page();
 
         @Given("US013Personel\\(Staff) url adresine gider")
         public void personelStaffUrlAdresineGider() {
