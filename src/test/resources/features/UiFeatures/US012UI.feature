@@ -1,7 +1,7 @@
 @US012
 Feature: US012 Physician (Doktor) test isteyebilmeli (My Appoitments/Edit/Request A Test)
   Background: Ortak adimlar
-Given Doktor12 url adresine gider
+Given Doktor12 "medunnaUrl" adresine gider
 And  3 saniye bekler
 When Doktor12 Giris simgesine tiklar
 And  3 saniye bekler

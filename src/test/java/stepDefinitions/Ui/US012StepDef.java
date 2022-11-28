@@ -20,7 +20,7 @@ import static org.junit.Assert.assertTrue;
 public class US012StepDef {
     US012Page US012Page= new US012Page();
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
-    @Given("Doktor12 url adresine gider")
+    @Given("Doktor12 {string} adresine gider")
     public void doktorUrlAdresineGider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
     }
