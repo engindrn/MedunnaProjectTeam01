@@ -18,11 +18,7 @@ Feature: US011 My Appointments" Physician (Doctor) tarafından düzenlenebilmeli
     And  Doktor11 Create or Edit an Appoinment yazisini gorur
     And  Doktor11 status alanindan bir opsiyon secer
     And  Doktor11 save butotuna tiklar
-<<<<<<< HEAD
-    Then  Doktor11 the appointment is updated with identifier 303971 yazisini gorur
-=======
     Then  Doktor11 the appointment is updated with identifier 343044 yazisini gorur
->>>>>>> master
     And  sayfayi11 kapatir
 
 
@@ -49,11 +45,7 @@ Feature: US011 My Appointments" Physician (Doctor) tarafından düzenlenebilmeli
     And  Doktor11  edit butonuna tiklar
     And  Doktor11 prescription ve description alanlarini bos birakir
     And  Doktor11 save butotuna tiklar
-<<<<<<< HEAD
-    And  Doktor11 the appointment is updated with identifier 303971 yazisini gorur
-=======
     And  Doktor11 the appointment is updated with identifier 343044 yazisini gorur
->>>>>>> master
     And  sayfayi11 kapatir
 
 
@@ -62,11 +54,7 @@ Feature: US011 My Appointments" Physician (Doctor) tarafından düzenlenebilmeli
     And  Doktor11  edit butonuna tiklar
     And  Doktor11 prescription ve description alanlarina bilgiler girer
     And  Doktor11 save butotuna tiklar
-<<<<<<< HEAD
-    And  Doktor11 the appointment is updated with identifier 303971 yazisini gorur
-=======
     And  Doktor11 the appointment is updated with identifier 343044 yazisini gorur
->>>>>>> master
     And  sayfayi11 kapatir
 
 
