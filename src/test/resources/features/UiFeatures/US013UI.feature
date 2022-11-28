@@ -41,5 +41,5 @@ Feature:US013 Physician (Doktor) "Test Results" işlemleri yapabilmeli(My Appoin
     And Doktor13 Sign in butonuna tiklar.
     And Doktor13 My Pages e tiklar.
     And Doktor13 My Appoitmente tiklar.
-    And Doktor Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.
+    And Doktor13 Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.
     And Doktor13 Acilan sayfada "Request Inpatient" e tiklar.

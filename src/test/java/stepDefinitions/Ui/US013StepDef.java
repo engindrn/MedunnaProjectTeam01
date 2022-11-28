@@ -148,7 +148,7 @@ public class US013StepDef {
         US013Page.doctorMyAppointments.click();
     }
 
-    @And("Doktor Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.")
+    @And("Doktor13 Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.")
     public void doktorYatisiniIsteyecegiHastaninÜzerineGelipEditETiklar() {
         WebElement submit = Driver.getDriver().
                 findElement(By.xpath("//span[@class='d-none d-md-inline']"));
