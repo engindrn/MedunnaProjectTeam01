@@ -15,7 +15,10 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features/UiFeatures",
         glue = "stepDefinitions",
-        tags = "@US013",
+
+        tags = "@US012",
+
+
         dryRun = false
 
 )
