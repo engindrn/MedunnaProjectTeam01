@@ -7,8 +7,11 @@ Feature:US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebil
     And Kullanici04 Sign in simgesine tiklar
 
 
+
+
   @US004_SmokePozitifTest
     @US004_TC001
+
   Scenario Outline: TC001 Admin gecerli değerlerle sisteme giriş yapabilmeli
 
     And Admin04 Username alanina  "<gecerli username>" girer
