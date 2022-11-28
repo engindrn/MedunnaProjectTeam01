@@ -7,9 +7,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.US012Page;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -17,62 +14,59 @@ import utilities.ReusableMethods;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.time.Duration;
 
 import static org.junit.Assert.assertTrue;
 
 public class US012StepDef {
-
-    US012Page us012Page = new US012Page();
+    US012Page US012Page= new US012Page();
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
-
-
-    @Given("US012Doktor url adresine gider")
+    @Given("Doktor12 {string} adresine gider")
     public void doktorUrlAdresineGider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
     }
-    @And("US012{int} saniye bekler")
+
+    @And("{int} saniye bekler")
     public void saniyeBekler(int arg0) {
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(3);
     }
 
-    @When("US012Giris simgesine tiklar")
-    public void girisSimgesineTiklar() {
+    @When("Doktor12 Giris simgesine tiklar")
+    public void doktorGirisSimgesineTiklar() {
         US012Page.accountMenuButonu.click();
     }
 
-    @And("US012Sign in simgesine tiklar")
-    public void signInSimgesineTiklar() {
+    @And("Doktor12 Sign in simgesine tiklar")
+    public void doktorSignInSimgesineTiklar() {
         US012Page.signInButton.click();
     }
 
-    @And("US012Username alanina gecerli bir username girer")
-    public void usernameAlaninaGecerliBirUsernameGirer() {
+    @And("Doktor12 Username alanina gecerli bir username girer")
+    public void doktorUsernameAlaninaGecerliBirUsernameGirer() {
         US012Page.usernameTextBox.sendKeys(ConfigReader.getProperty("doktorUserName012"));
     }
 
-    @And("US012Password alanina gecerli bir password girer")
-    public void passwordAlaninaGecerliBirPasswordGirer() {
+    @And("Doktor12 Password alanina gecerli bir password girer")
+    public void doktorPasswordAlaninaGecerliBirPasswordGirer() {
         US012Page.passwordTextBox.sendKeys(ConfigReader.getProperty("password012"));
     }
 
-    @And("US012Sign in butonuna tiklar")
-    public void signInButonunaTiklar() {
+    @And("Doktor12 Sign in butonuna tiklar")
+    public void doktorSignInButonunaTiklar() {
         US012Page.signInButton2.click();
     }
 
-    @And("US012My Pages e tiklar")
-    public void myPagesETiklar() {
+    @And("Doktor12 My Pages e tiklar")
+    public void doktorMyPagesETiklar() {
         US012Page.doctorMyPages.click();
     }
 
-    @And("US012My Appoitmente tiklar")
-    public void myAppoitmenteTiklar() {
+    @And("Doktor12 My Appoitmente tiklar")
+    public void doktorMyAppoitmenteTiklar() {
         US012Page.doctorMyAppointments.click();
     }
 
-    @And("US012Test isteyecegi hastanin üzerine gelip edit e tiklar")
-    public void testIsteyecegiHastaninÜzerineGelipEditETiklar() {
+    @And("Doktor12 Test isteyecegi hastanin üzerine gelip edit e tiklar")
+    public void doktorTestIsteyecegiHastaninÜzerineGelipEditETiklar() {
         // US012Page.hastaEdit.click();
 
         WebElement submit = Driver.getDriver().
@@ -82,8 +76,8 @@ public class US012StepDef {
         jse.executeScript("arguments[0].click();", submit);
     }
 
-    @And("US012Acilan sayfada {string} e tiklar")
-    public void acilanSayfadaETiklar(String arg0) {
+    @And("Doktor12 Acilan sayfada {string} e tiklar")
+    public void doktorAcilanSayfadaETiklar(String arg0) {
         // US012Page.RequestATest.click();
         WebElement submit = Driver.getDriver().
                 findElement(By.xpath("//a[@class='btn btn-success btn-sm']"));
@@ -92,13 +86,13 @@ public class US012StepDef {
         jse.executeScript("arguments[0].click();", submit);
     }
 
-    @Then("US012Acilan sayfada testlerin görüldügünü dogrular")
-    public void acilanSayfadaTestlerinGörüldügünüDogrular() {
+    @Then("Doktor12 Acilan sayfada testlerin görüldügünü dogrular")
+    public void doktorAcilanSayfadaTestlerinGörüldügünüDogrular() {
         assertTrue(US012Page.testItems.isDisplayed());
     }
 
-    @And("US012Doktor Urea testi ister")
-    public void doktorUreaTestiIster() throws AWTException {
+    @And("Doktor12 Urea testi ister")
+    public void doktorDoktorUreaTestiIster() throws AWTException {
         Robot robot = new Robot();
         for (int i = 0; i < 4; i++) {
             robot.keyPress(KeyEvent.VK_CONTROL); //CTRL ye tiklandi
@@ -107,18 +101,17 @@ public class US012StepDef {
             robot.keyRelease(KeyEvent.VK_CONTROL); //- yi birakti
             // CTRL (-) ye basılarak ekran belirlenen miktarda küçültülmüş oldu.
 
-           // US012Page.ure.click();
+            // US012Page.ure.click();
             // js.executeScript("argument[0].click;", US012Page.testUrea);
             WebElement submit = Driver.getDriver().
                     findElement(By.xpath("//input[@name='1402']"));
             JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
             jse.executeScript("arguments[0].scrollIntoView(true);", submit);
             jse.executeScript("arguments[0].click();", submit);
-
-
         }
-    }
-    @And("US012Doktor Sodium testi ister")
+        }
+
+    @And("Doktor12 Sodium testi ister")
     public void doktorSodiumTestiIster() {
         //ReusableMethods.jsScrollClick ( US012Page.Sodium);
         // US012Page.Sodium.click();
@@ -131,7 +124,7 @@ public class US012StepDef {
 
     }
 
-    @And("US012Doktor Albumin testi ister")
+    @And("Doktor12 Albumin testi ister")
     public void doktorAlbuminTestiIster() {
         //US012Page.albumin.click();
         // js.executeScript("argument[0].click;", US012Page.testAlbumin);
@@ -143,7 +136,7 @@ public class US012StepDef {
 
     }
 
-    @And("US012Doktor Hemoglobin testi ister")
+    @And("Doktor12 Hemoglobin testi ister")
     public void doktorHemoglobinTestiIster() {
         //  ReusableMethods.jsScrollClick ( US012Page.hemoglobin);
         // US012Page.hemoglobin.click();
@@ -153,11 +146,9 @@ public class US012StepDef {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView(true);", submit);
         jse.executeScript("arguments[0].click();", submit);
-
-
     }
 
-    @And("US012Doktor Potasyum testi ister")
+    @And("Doktor12 Potasyum testi ister")
     public void doktorPotasyumTestiIster() {
         //  US012Page.Potasyum.click();
         // js.executeScript("argument[0].click;", US012Page.testPotassium);
@@ -166,13 +157,10 @@ public class US012StepDef {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView(true);", submit);
         jse.executeScript("arguments[0].click();", submit);
-
-
     }
 
-    @And("US012Doktor Glukose testi ister")
+    @And("Doktor12 Glukose testi ister")
     public void doktorGlukoseTestiIster() {
-
         // US012Page.glucose.click();
         // ReusableMethods.jsScrollClick ( US012Page.glucose);
         // js.executeScript("argument[0].click;", US012Page.testGlucose);
@@ -181,10 +169,9 @@ public class US012StepDef {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView(true);", submit);
         jse.executeScript("arguments[0].click();", submit);
-
     }
 
-    @And("US012Doktor Creatinine testi ister")
+    @And("Doktor12 Creatinine testi ister")
     public void doktorCreatinineTestiIster() {
         //US012Page.Creatinine.click();
         //  js.executeScript("argument[0].click;", US012Page.testCreatinine);
@@ -195,7 +182,7 @@ public class US012StepDef {
         jse.executeScript("arguments[0].click();", submit);
     }
 
-    @And("US012Doktor Total Protein testi ister")
+    @And("Doktor12 Total Protein testi ister")
     public void doktorTotalProteinTestiIster() {
         //ReusableMethods.jsScrollClick ( US012Page.totalProtein);
         //US012Page.totalProtein.click();
@@ -207,7 +194,7 @@ public class US012StepDef {
         jse.executeScript("arguments[0].click();", submit);
     }
 
-    @And("US012Doktor save butonuna tiklar")
+    @And("Doktor12 save butonuna tiklar")
     public void doktorSaveButonunaTiklar() {
         WebElement save = US012Page.save;
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
@@ -223,6 +210,5 @@ public class US012StepDef {
         assertTrue(US012Page.update.isDisplayed());
     }*/
 
-
-
 }
+

@@ -11,49 +11,49 @@ public class US013Page {
     }
 
     @FindBy(xpath = "//li[@id='account-menu']")
-    public static WebElement accountMenuButonu;
+    public WebElement accountMenuButonu;
 
     @FindBy(xpath = "//span[normalize-space()='Sign in']")
-    public static WebElement signInButton;
+    public WebElement signInButton;
 
     @FindBy(xpath = "//input[@id='username']")
-    public static WebElement usernameTextBox;
+    public WebElement usernameTextBox;
 
     @FindBy(xpath = "//input[@id='password']")
-    public static WebElement passwordTextBox;
+    public WebElement passwordTextBox;
     @FindBy(xpath = "//button[@type='submit']//span[contains(text(),'Sign in')]")
-    public static WebElement signInButton2;
+    public WebElement signInButton2;
     @FindBy(xpath = "//span[text()='MY PAGES']")
-    public static WebElement personelMyPages;
+    public WebElement personelMyPages;
     @FindBy(xpath = "//span[text()='Search Patient']")
-    public static WebElement searchPatient;
+    public WebElement searchPatient;
     @FindBy(xpath = "//input[@name='ssn']")
-    public static WebElement patientSSN;
+    public WebElement patientSSN;
     @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[3]")
-    public static WebElement showAppointments;
+    public WebElement showAppointments;
     @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[4]")
-    public static WebElement showTests;
+    public WebElement showTests;
     @FindBy(xpath = "(//span[text()='View Results'])[2]")
-    public static WebElement viewResults;
+    public WebElement viewResults;
     @FindBy(xpath = "//span[@class='d-none d-md-inline']")
-    public static WebElement testResultEdit;
+    public WebElement testResultEdit;
     @FindBy(xpath = "//input[@id='c-test-result-result']")
-    public static WebElement hastaTestResult;
+    public WebElement hastaTestResult;
     @FindBy(xpath = "//span[text()='MY PAGES']")
-    public static WebElement doctorMyPages;
+    public WebElement doctorMyPages;
     @FindBy(xpath = "//span[text()='My Appointments']")
-    public static WebElement doctorMyAppointments;
+    public WebElement doctorMyAppointments;
     @FindBy(xpath = "//span[@class='d-none d-md-inline']")
-    public static WebElement hastaEdit;
+    public WebElement hastaEdit;
     @FindBy(xpath = "//button[text()='Request Inpatient']")
-    public static WebElement RequestInpatient;
+    public WebElement RequestInpatient;
     @FindBy (xpath = "//*[text()='Edit'][1]")
-    public static WebElement editButton;
+    public WebElement editButton;
     @FindBy (xpath = "//input[@name='result']")
-    public static WebElement resultTextBox;
+    public WebElement resultTextBox;
     @FindBy (xpath = "//*[text()='Save']")
-    public static WebElement saveButton;
+    public WebElement saveButton;
     @FindBy (xpath = "//button[@class='Toastify__close-button Toastify__close-button--success']")
-    public static WebElement resultUpdateNotification;
+    public WebElement resultUpdateNotification;
 
 }
