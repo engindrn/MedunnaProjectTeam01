@@ -4,7 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import utilities.DatabaseUtility;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,24 +20,24 @@ public class US009DbStepDef {
 
         //Actual Data
         Integer patientId = 328536;
-        String query1 = "Select * from patient where id=328536";
+        String query1 = "Select * from patient where id=307391";
         Map<String, Object> actualPatient = new HashMap<>(DatabaseUtility.getRowMap(query1));
         System.out.println("actualMap = " + actualPatient);
 
         System.out.println("+++++");
 
-      // Expected Data
-        Map<String,Object>expectedPatient=expectedData("Basvuru", "yeni_basvuru",null,"0233445765",
-                328968,null,328536,"Yeni", "yenibasvuru@gmail.com");
+        // Expected Data
+        Map<String,Object>expectedPatient=expectedData("Dadabase", "Hasta database testi","Central street  Nr:01","0112233445",
+                3309,null,307391,"hasta", "hastadatabase@gmail.com");
         System.out.println("expectedPatient = " + expectedPatient);
 
 
         Assert.assertEquals(expectedPatient.get("last_name"), actualPatient.get("last_name"));
         Assert.assertEquals(expectedPatient.get("first_name"), actualPatient.get("first_name"));
         Assert.assertEquals(expectedPatient.get("email"), actualPatient.get("email"));
-        Assert.assertEquals(expectedPatient.get("gender"), actualPatient.get("gender"));
+        Assert.assertEquals(expectedPatient.get("phone"), actualPatient.get("phone"));
         Assert.assertEquals(expectedPatient.get("adress"), actualPatient.get("adress"));
-        //Assert.assertEquals(expectedPatient.get("id"),actualPatient.get("id"));
+
 
 
     }
