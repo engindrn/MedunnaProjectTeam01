@@ -1,6 +1,6 @@
 Feature: US010 Database test
 
-  @US10_DBTest
+  @US10_DB_Test
   Scenario: Doktor "patient id, start date, end date, status" bilgilerini Database de dogrulayabilmelidir
 
 

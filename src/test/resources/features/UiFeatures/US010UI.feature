@@ -1,4 +1,4 @@
-@US010
+@US010_UI_Test
 Feature:US010 Doktor (Physician) randevuları
 
   @US010_TC001
