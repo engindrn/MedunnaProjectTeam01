@@ -40,16 +40,16 @@ public class US011Page {
     @FindBy(xpath = "//*[text()='Save']")
     public WebElement save;
 
-    @FindBy(xpath = "//*[contains(text(),'The Appointment is updated with identifier 303971')]")
+    @FindBy(xpath = "//*[contains(text(),'The Appointment is updated with identifier 343044')]")
     public WebElement update;
 
-    @FindBy(xpath = "//*[text()='303971']")
+    @FindBy(xpath = "//*[text()='343044']")
     public WebElement hastaId;
 
-    @FindBy(xpath = "//*[text()='16/11/22 01:00']")
+    @FindBy(xpath = "//*[text()='30/11/22 01:00']")
     public WebElement startDate;
 
-    @FindBy(xpath = "//*[text()='16/11/22 02:00']")
+    @FindBy(xpath = "//*[text()='30/11/22 02:00']")
     public WebElement endDate;
 
     @FindBy(xpath = "//*[text()='COMPLETED']")

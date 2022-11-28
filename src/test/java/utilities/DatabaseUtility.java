@@ -1,19 +1,25 @@
 package utilities;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 public class DatabaseUtility {
+
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
 
     public static void createConnection() {
-        String url = ConfigReader.getProperty("db_credentials_url");
-        String user = ConfigReader.getProperty("db_username");
-        String password = ConfigReader.getProperty("db_password");
+//        String url = ConfigurationReader.getProperty("database_url");
+//        String user = ConfigurationReader.getProperty("database_user");
+//        String password = "Techpro_@126";
+
+
+        String url = "jdbc:postgresql://medunna.com:5432/medunna_db";
+        String user = "medunna_user";
+        String password = "medunna_pass_987";
         try {
             connection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
@@ -21,19 +27,7 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
-    public static void main(String[] args) {
-        createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "medunna_pass_987");
-        System.out.println(getColumnData("Select * FROM jhi_user", "first_name"));
-        closeConnection();
-    }
-    public static void createConnection(String url, String user, String password) {
-        try {
-            connection = DriverManager.getConnection(url, user, password);
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
+
     public static void closeConnection() {
         try {
             if (resultSet != null) {
@@ -50,14 +44,18 @@ public class DatabaseUtility {
         }
     }
     /**
-     *
      * @param query
+     * @param s
      * @return returns a single cell value. If the results in multiple rows and/or
-     *         columns of data, only first column of the first row will be returned.
-     *         The rest of the data will be ignored
+     * columns of data, only first column of the first row will be returned.
+     * The rest of the data will be ignored
      */
-    public static Object getCellValue(String query) {
+    public static Object getCellValue(String query, String s) {
         return getQueryResultList(query).get(0).get(0);
+    }
+
+    public static Object getSecondCellValue(String query) {
+        return getQueryResultList(query).get(0).get(1);
     }
     /**
      *
@@ -132,6 +130,8 @@ public class DatabaseUtility {
      *         collection of rows and a map represents represent a single row with
      *         key being the column name
      */
+
+
 
     public static List<Map<String, Object>> getQueryResultMap(String query) {
         executeQuery(query);
@@ -234,3 +234,4 @@ public class DatabaseUtility {
         return resultSet;
     }
 }
+
