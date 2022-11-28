@@ -3,43 +3,43 @@ Feature:US013 Physician (Doktor) "Test Results" işlemleri yapabilmeli(My Appoin
   @US013TC001
   Scenario: TC001 Testler talep edildikten sonra Staff  test sonuclarini güncellemelidir
 
-    Given Personel(Staff) url adresine gider
-    When Staff Giris simgesine tiklar
-    And Staff Sign in simgesine tiklar
+    Given Staff13 url adresine gider
+    When Staff13 Giris simgesine tiklar
+    And Staff13 Sign in simgesine tiklar
     And 3 saniye bekler.
-    And Staff Username alanina gecerli bir username girer
+    And Staff13 Username alanina gecerli bir username girer
     And 3 saniye bekler.
-    And Staff Password alanina gecerli bir password girer
+    And Staff13 Password alanina gecerli bir password girer
     And 3 saniye bekler.
-    And Staff Sign in butonuna tiklar
+    And Staff13 Sign in butonuna tiklar
     And 3 saniye bekler.
-    And Staff My Pages e tiklar
+    And Staff13 My Pages e tiklar
     And 3 saniye bekler.
-    And Staff search Patiente tiklar
+    And Staff13 search Patiente tiklar
     And 3 saniye bekler.
-    And Test sonuclarini güncelleyecegi hastanin SSN numarasini girer
+    And Staff13 Test sonuclarini güncelleyecegi hastanin SSN numarasini girer
     And 3 saniye bekler.
-    And SSN ini girdigi hastada show appoitments e tiklar
+    And Staff13 SSN ini girdigi hastada show appoitments e tiklar
     And 3 saniye bekler.
-    And Show test e tiklar
+    And Staff13 Show test e tiklar
     And 3 saniye bekler.
-    And View Result a tiklar
+    And Staff13 View Result a tiklar
     And 3 saniye bekler.
-    And Edit e tiklar
+    And Staff13 Edit e tiklar
     And 3 saniye bekler.
-    Then Tum Resultlari(Sodyum,Potasyum;Glukose,Ure,Creatinine,Total Protein,Albumin ,Hemoglobin) günceller
+    Then Staff13 Tum Resultlari(Sodyum,Potasyum;Glukose,Ure,Creatinine,Total Protein,Albumin ,Hemoglobin) günceller
 
 
   @US013TC002
   Scenario: TC002 "Request Impatient" (hastanin yatili tedavi görmesi )  isteginde bulunabilmelidir
 
-    Given Doktor "medunnaUrl" adresine gider.
-    When Giris simgesine tiklar.
-    And Sign in simgesine tiklar.
-    And Username alanina gecerli bir username girer.
-    And  Password alanina gecerli bir password girer.
-    And Sign in butonuna tiklar.
-    And My Pages e tiklar.
-    And My Appoitmente tiklar.
-    And Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.
-    And Acilan sayfada "Request Inpatient" e tiklar.
+    Given Doktor13 "medunnaUrl" adresine gider.
+    When Doktor13 Giris simgesine tiklar.
+    And Doktor13 Sign in simgesine tiklar.
+    And Doktor13 Username alanina gecerli bir username girer.
+    And Doktor13 Password alanina gecerli bir password girer.
+    And Doktor13 Sign in butonuna tiklar.
+    And Doktor13 My Pages e tiklar.
+    And Doktor13 My Appoitmente tiklar.
+    And Doktor Yatisini isteyecegi hastanin üzerine gelip Edit e tiklar.
+    And Doktor13 Acilan sayfada "Request Inpatient" e tiklar.
