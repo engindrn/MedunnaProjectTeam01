@@ -21,6 +21,7 @@ public class US013StepDef {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
     }
 
+
     @When("Staff13 Giris simgesine tiklar")
     public void staffGirisSimgesineTiklar() {
         US013Page.accountMenuButonu.click();
@@ -40,6 +41,7 @@ public class US013StepDef {
     public void staffUsernameAlaninaGecerliBirUsernameGirer() {
         US013Page.usernameTextBox.sendKeys(ConfigReader.getProperty("personelUsername012"));
     }
+
 
     @And("Staff13 Password alanina gecerli bir password girer")
     public void staffPasswordAlaninaGecerliBirPasswordGirer() {
