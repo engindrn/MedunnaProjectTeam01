@@ -28,11 +28,7 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-<<<<<<< HEAD
-    <connection id="6bd34630-135f-43a2-ab5f-d4a05e7459e1">
-=======
     <connection id="27fd44af-8b6f-42af-88d6-f653ecc1f88f">
->>>>>>> master
       <console name="Medunna" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
