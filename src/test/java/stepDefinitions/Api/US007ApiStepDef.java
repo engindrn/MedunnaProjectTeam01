@@ -37,4 +37,6 @@ public class US007ApiStepDef extends Authentication {
         JsonPath jsonPath = response.jsonPath();
         assertEquals(id,jsonPath.getInt("id"));
     }
+
+
 }

@@ -1,5 +1,7 @@
 
 package utilities;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -161,5 +163,12 @@ public class ReusableMethods {
             System.out.println(
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
+
+    }
+
+
+    public static Faker getFaker() {
+        Faker faker;
+        return faker = new Faker();
     }
 }
