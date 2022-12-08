@@ -28,47 +28,47 @@ package stepDefinitions.Ui;
 public class US017StepDef {
     pages.US017Page US017Page = new US017Page();
     Actions actions = new Actions(Driver.getDriver());
-    @Given("Admin url adresine gider")
+    @Given("AdminMP url adresine gider")
     public void adminUrlAdresineGider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
     }
-    @When("Admin giris simgesine tiklar")
+    @When("AdminMP giris simgesine tiklar")
     public void adminGirisSimgesineTiklar() {
         US017Page.accountMenuButonu.click();
 
     }
-    @And("Admin sign in simgesine tiklar")
+    @And("AdminMP sign in simgesine tiklar")
     public void adminSignInSimgesineTiklar() {
         US017Page.signInButton.click();
 
     }
-    @And("Admin username alanina gecerli bir username girer")
+    @And("AdminMP username alanina gecerli bir username girer")
     public void adminUsernameAlaninaGecerliBirUsernameGirer() {
         US017Page.usernameTextBox.sendKeys(ConfigReader.getProperty("usernameUS017"));
     }
-    @And("Admin password alanina gecerli bir password girer")
+    @And("AdminMP password alanina gecerli bir password girer")
     public void adminPasswordAlaninaGecerliBirPasswordGirer() {
         US017Page.passwordTextBox.sendKeys(ConfigReader.getProperty("passwordUS017"));
 
     }
-    @And("Admin sign in butonuna tiklar")
+    @And("AdminMP sign in butonuna tiklar")
     public void adminSignInButonunaTiklar() {
         US017Page.signInButton2.click();
     }
-    @And("Admin Items-Titels e tiklar")
+    @And("AdminMP Items-Titels e tiklar")
     public void adminItemsTitelsETiklar() {
         actions.sendKeys(Keys.PAGE_UP).perform();
         US017Page.ItemsTitles.click();
     }
-    @And("Admin Test Item e tiklar")
+    @And("AdminMP Test Item e tiklar")
     public void adminTestItemETiklar() {
         US017Page.TestItem.click();
     }
-    @And("Admin Create a new Test Item a tiklar")
+    @And("AdminMP Create a new Test Item a tiklar")
     public void adminCreateANewTestItemATiklar() {
         US017Page.CreateanewTestItem.click();
     }
-    @And("Admin  Name,Description,price Default min value,Default max value degerlerini girer")
+    @And("AdminMP  Name,Description,price Default min value,Default max value degerlerini girer")
     public void adminNameDescriptionPriceDefaultMinValueDefaultMaxValueDegerleriniGirer() {
         // US017Page.testName.sendKeys("Glukoz");
         //US017Page.Description.sendKeys("glukoz");
@@ -84,7 +84,7 @@ public class US017StepDef {
 
     }
 
-    @And("Admin save butona tiklar")
+    @And("AdminMP save butona tiklar")
     public void adminSaveButonaTiklar() {
 
         WebElement submit = Driver.getDriver().
@@ -94,11 +94,11 @@ public class US017StepDef {
         jse.executeScript("arguments[0].click();", submit);
 
     }
-    @And("Admin IDButtona tiklar")
+    @And("AdminMP IDButtona tiklar")
     public void adminIDButtonaTiklar() {
         US017Page.IDButton.click();
     }
-    @And("Admin GlukozID ye tiklar")
+    @And("AdminMP GlukozID ye tiklar")
     public void adminGlukozIDYeTiklar() {
         // actions.sendKeys(Keys.PAGE_DOWN).perform();
         // US017Page.GlukozID.click();
@@ -108,12 +108,12 @@ public class US017StepDef {
         jse.executeScript("arguments[0].scrollIntoView(true);", submit);
         jse.executeScript("arguments[0].click();", submit);
     }
-    @And("Admin testEditButton a tiklar")
+    @And("AdminMP testEditButton a tiklar")
     public void adminTestEditButtonATiklar() {
 
         US017Page.testEditButton.click();
     }
-    @And("Admin Name,Description,price Default min value,Default max value degerlerini günceller")
+    @And("AdminMP Name,Description,price Default min value,Default max value degerlerini günceller")
     public void adminNameDescriptionPriceDefaultMinValueDefaultMaxValueDegerleriniGünceller() {
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.DELETE).perform();
@@ -128,20 +128,20 @@ public class US017StepDef {
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("DefaultValMax")).sendKeys(Keys.ENTER).perform();
 
     }
-    @And("Admin test delete tiklar")
+    @And("AdminMP test delete tiklar")
     public void adminTestDeleteTiklar() {
         US017Page.testDeleteButton.click();
 
     }
-    @And("Admin {int} saniye bekler")
+    @And("AdminMP {int} saniye bekler")
     public void adminSaniyeBekler(int arg0) {
         ReusableMethods.waitFor(3);
     }
-    @Then("Admin created date{string} görünür oldugunu dogrular.")
+    @Then("AdminMP created date{string} görünür oldugunu dogrular.")
     public void adminCreatedDateGörünürOldugunuDogrular(String arg0) {
         assertTrue( US017Page.CreateDate.isDisplayed());
     }
-    @And("Admin sayfayi kapatir")
+    @And("AdminMP sayfayi kapatir")
     public void adminSayfayiKapatir() {
         Driver.closeDriver();
     }
