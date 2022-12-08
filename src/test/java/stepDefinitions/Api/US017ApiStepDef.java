@@ -55,7 +55,6 @@ public class US017ApiStepDef {
     public void mp_status_code_is(int statuscode) {
         response.then().statusCode(statuscode);
 
-
     }
 
     @Then("MP Verify expected data equals to actual data")
