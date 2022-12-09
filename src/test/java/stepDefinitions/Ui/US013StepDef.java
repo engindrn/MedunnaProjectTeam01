@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import pages.US013Page;
-import utilities.ConfigReader;
+import utilities.ConfigReader1;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -18,7 +18,7 @@ public class US013StepDef {
     US013Page US013Page = new US013Page();
     @Given("Staff13 url adresine gider")
     public void staffUrlAdresineGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+        Driver.getDriver().get(ConfigReader1.getProperty("medunnaUrl"));
     }
 
 
@@ -39,13 +39,13 @@ public class US013StepDef {
 
     @And("Staff13 Username alanina gecerli bir username girer")
     public void staffUsernameAlaninaGecerliBirUsernameGirer() {
-        US013Page.usernameTextBox.sendKeys(ConfigReader.getProperty("personelUsername012"));
+        US013Page.usernameTextBox.sendKeys(ConfigReader1.getProperty("personelUsername012"));
     }
 
 
     @And("Staff13 Password alanina gecerli bir password girer")
     public void staffPasswordAlaninaGecerliBirPasswordGirer() {
-        US013Page. passwordTextBox.sendKeys(ConfigReader.getProperty("password012"));
+        US013Page. passwordTextBox.sendKeys(ConfigReader1.getProperty("password012"));
     }
 
     @And("Staff13 Sign in butonuna tiklar")
@@ -65,7 +65,7 @@ public class US013StepDef {
 
     @And("Staff13 Test sonuclarini güncelleyecegi hastanin SSN numarasini girer")
     public void staffTestSonuclariniGüncelleyecegiHastaninSSNNumarasiniGirer() {
-        US013Page.patientSSN.sendKeys(ConfigReader.getProperty("hastaSSNNo"));
+        US013Page.patientSSN.sendKeys(ConfigReader1.getProperty("hastaSSNNo"));
     }
 
     @And("Staff13 SSN ini girdigi hastada show appoitments e tiklar")
@@ -112,7 +112,7 @@ public class US013StepDef {
 
     @Given("Doktor13 {string} adresine gider.")
     public void doktorAdresineGider(String arg0) {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+        Driver.getDriver().get(ConfigReader1.getProperty("medunnaUrl"));
     }
 
     @When("Doktor13 Giris simgesine tiklar.")
@@ -127,12 +127,12 @@ public class US013StepDef {
 
     @And("Doktor13 Username alanina gecerli bir username girer.")
     public void doktorUsernameAlaninaGecerliBirUsernameGirer() {
-        US013Page.usernameTextBox.sendKeys(ConfigReader.getProperty("doktorUserName012"));
+        US013Page.usernameTextBox.sendKeys(ConfigReader1.getProperty("doktorUserName012"));
     }
 
     @And("Doktor13 Password alanina gecerli bir password girer.")
     public void doktorPasswordAlaninaGecerliBirPasswordGirer() {
-        US013Page. passwordTextBox.sendKeys(ConfigReader.getProperty("password012"));
+        US013Page. passwordTextBox.sendKeys(ConfigReader1.getProperty("password012"));
     }
 
     @And("Doktor13 Sign in butonuna tiklar.")

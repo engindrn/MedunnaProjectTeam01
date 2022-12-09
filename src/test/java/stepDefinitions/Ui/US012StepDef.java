@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import pages.US012Page;
-import utilities.ConfigReader;
+import utilities.ConfigReader1;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -22,7 +22,7 @@ public class US012StepDef {
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
     @Given("Doktor12 {string} adresine gider")
     public void doktorUrlAdresineGider() {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+        Driver.getDriver().get(ConfigReader1.getProperty("medunnaUrl"));
     }
 
     @And("{int} saniye bekler")
@@ -42,12 +42,12 @@ public class US012StepDef {
 
     @And("Doktor12 Username alanina gecerli bir username girer")
     public void doktorUsernameAlaninaGecerliBirUsernameGirer() {
-        US012Page.usernameTextBox.sendKeys(ConfigReader.getProperty("doktorUserName012"));
+        US012Page.usernameTextBox.sendKeys(ConfigReader1.getProperty("doktorUserName012"));
     }
 
     @And("Doktor12 Password alanina gecerli bir password girer")
     public void doktorPasswordAlaninaGecerliBirPasswordGirer() {
-        US012Page.passwordTextBox.sendKeys(ConfigReader.getProperty("password012"));
+        US012Page.passwordTextBox.sendKeys(ConfigReader1.getProperty("password012"));
     }
 
     @And("Doktor12 Sign in butonuna tiklar")

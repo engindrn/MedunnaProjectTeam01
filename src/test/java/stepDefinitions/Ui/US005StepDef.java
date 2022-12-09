@@ -9,7 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import pages.US005Page;
-import utilities.ConfigReader;
+import utilities.ConfigReader1;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -23,7 +23,7 @@ public class US005StepDef {
 
     @Given("Kullanici05 {string} ye gider")
     public void kullaniciYeGider(String url) {
-        Driver.getDriver().get(ConfigReader.getProperty(url));
+        Driver.getDriver().get(ConfigReader1.getProperty(url));
 
     }
 

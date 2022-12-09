@@ -7,7 +7,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.US001Page;
 import pages.US002Page;
-import utilities.ConfigReader;
+import pages.US018Page;
+import utilities.ConfigReader1;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -16,10 +17,11 @@ import static utilities.ReusableMethods.waitFor;
 public class US001StepDef {
     US001Page us001 = new US001Page();
     US002Page us002 = new US002Page();
+    US018Page us018 = new US018Page();
 
     @Given("Kullanici {string} sayfasina gider")
     public void kullanici_sayfasina_gider(String string) {
-        Driver.getDriver().get(ConfigReader.getProperty("medunna_url"));
+        Driver.getDriver().get(ConfigReader1.getProperty("medunna_url"));
         waitFor(3);
     }
 
@@ -255,7 +257,6 @@ public class US001StepDef {
         us002.GecersizEmail2(mail1,mail2);
 
     }
-
 
 
 }

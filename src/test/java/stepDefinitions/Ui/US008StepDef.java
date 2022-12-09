@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.poi.ss.usermodel.*;
 import pages.US008_014Page;
-import utilities.ConfigReader;
+import utilities.ConfigReader1;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -33,7 +33,7 @@ public class US008StepDef {
     @Given("kullanici {string} url'e gider")
     public void kullaniciUrlEGider(String url) {
 
-        Driver.getDriver().get(ConfigReader.getProperty(url));
+        Driver.getDriver().get(ConfigReader1.getProperty(url));
     }
 
     @When("kullanici login olur")
@@ -41,8 +41,8 @@ public class US008StepDef {
 
         page.accountMenu.click();
         page.signIn.click();
-        page.usernameBox.sendKeys(ConfigReader.getProperty("userUsername"));
-        page.passwordBox.sendKeys(ConfigReader.getProperty("userPassword"));
+        page.usernameBox.sendKeys(ConfigReader1.getProperty("userUsername"));
+        page.passwordBox.sendKeys(ConfigReader1.getProperty("userPassword"));
         page.signInButton.click();
 
         // Actions Yontem
@@ -63,19 +63,19 @@ public class US008StepDef {
     @And("kullanici current password girer")
     public void kullaniciCurrentPasswordGirer() {
 
-        page.currentPasswordBox.sendKeys(ConfigReader.getProperty("userPassword"));
+        page.currentPasswordBox.sendKeys(ConfigReader1.getProperty("userPassword"));
     }
 
     @And("kullanici new password girer")
     public void kullaniciNewPasswordGirer() {
 
-        page.newPasswordBox.sendKeys(ConfigReader.getProperty("userPassword"));
+        page.newPasswordBox.sendKeys(ConfigReader1.getProperty("userPassword"));
     }
 
     @And("kullanici new password confirmation girer")
     public void kullaniciNewPasswordConfirmationGirer() {
 
-        page.confirmPasswordBox.sendKeys(ConfigReader.getProperty("userPassword"));
+        page.confirmPasswordBox.sendKeys(ConfigReader1.getProperty("userPassword"));
     }
 
     @And("kullanici {string} mesajinin gorunur olmadigini dogrular")
@@ -265,7 +265,7 @@ public class US008StepDef {
         ReusableMethods.waitFor(2);
         page.signIn.click();
         ReusableMethods.waitFor(2);
-        page.usernameBox.sendKeys(ConfigReader.getProperty("excelUsername"));
+        page.usernameBox.sendKeys(ConfigReader1.getProperty("excelUsername"));
         ReusableMethods.waitFor(2);
         page.passwordBox.sendKeys(sifre);
         ReusableMethods.waitFor(2);

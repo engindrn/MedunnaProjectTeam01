@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.US009Page;
-import utilities.ConfigReader;
+import utilities.ConfigReader1;
 import utilities.Driver;
 
 import java.time.Duration;
@@ -42,7 +42,7 @@ public class US009StepDef {
 
     @Given("Personel Medunna ana sayfasinda")
     public void personel_medunna_ana_sayfasinda() {
-        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl09"));
+        Driver.getDriver().get(ConfigReader1.getProperty("medunnaUrl09"));
     }
 
     @When("Personel Giris simgesini tiklar")
@@ -59,13 +59,13 @@ public class US009StepDef {
 
     @And("Personel username alanina gecerli bir username girer")
     public void personel_username_alanina_gecerli_bir_username_girer() {
-        us009Page.username.sendKeys(ConfigReader.getProperty("personelUserName09"));
+        us009Page.username.sendKeys(ConfigReader1.getProperty("personelUserName09"));
 
     }
 
     @And("Personel password alanina gecerli bir password girer")
     public void personel_password_alanina_gecerli_bir_password_girer() {
-        us009Page.password.sendKeys(ConfigReader.getProperty("personelPassword09"));
+        us009Page.password.sendKeys(ConfigReader1.getProperty("personelPassword09"));
 
     }
 
@@ -89,7 +89,7 @@ public class US009StepDef {
 
     @And("acilan sayfada search kutusuna aranacak hasta SSN numarasini girer")
     public void acilan_sayfada_search_kutusuna_aranacak_hasta_ssn_numarasini_girer() throws InterruptedException {
-        us009Page.ssnBox.sendKeys(ConfigReader.getProperty("ssnHasta01"));
+        us009Page.ssnBox.sendKeys(ConfigReader1.getProperty("ssnHasta01"));
         Thread.sleep(1000);
 
 
@@ -150,33 +150,33 @@ public class US009StepDef {
     @And("First Name' i istenen first name ile degistirir")
     public void firstNameIIstenenFirstNameIleDegistirir() {
         us009Page.firstName.clear();
-        us009Page.firstName.sendKeys(ConfigReader.getProperty("firstName01"));
+        us009Page.firstName.sendKeys(ConfigReader1.getProperty("firstName01"));
     }
 
     @And("Last Name' i istenen last name ile degistirir")
     public void lastNameIIstenenLastNameIleDegistirir() {
         us009Page.lastName.clear();
-        us009Page.lastName.sendKeys(ConfigReader.getProperty("lastName01"));
+        us009Page.lastName.sendKeys(ConfigReader1.getProperty("lastName01"));
 
     }
 
     @And("Birth Date'i istenen Birth Date ile degistirir")
     public void birthDateIIstenenBirthDateIleDegistirir() {
         us009Page.birthDate.clear();
-        us009Page.birthDate.sendKeys(ConfigReader.getProperty("birthDate01"));
+        us009Page.birthDate.sendKeys(ConfigReader1.getProperty("birthDate01"));
     }
 
     @And("Emai'i istenen email ile degistirir")
     public void emaiIIstenenEmailIleDegistirir() {
         us009Page.email.clear();
-        us009Page.email.sendKeys(ConfigReader.getProperty("email01"));
+        us009Page.email.sendKeys(ConfigReader1.getProperty("email01"));
 
     }
 
     @And("Phone'u istenen Phone ile degistirir")
     public void phoneUIstenenPhoneIleDegistirir() {
         us009Page.phone.clear();
-        us009Page.phone.sendKeys(ConfigReader.getProperty("phone01"));
+        us009Page.phone.sendKeys(ConfigReader1.getProperty("phone01"));
 
     }
 
@@ -201,14 +201,14 @@ public class US009StepDef {
     @And("Address' i istenen adres ile degistirir")
     public void addressIIstenenAdresIleDegistirir() {
         us009Page.patientAddress.clear();
-        us009Page.patientAddress.sendKeys(ConfigReader.getProperty("adress01"));
+        us009Page.patientAddress.sendKeys(ConfigReader1.getProperty("adress01"));
 
     }
 
     @And("Description'u istenen description ile degistirir")
     public void descriptionUIstenenDescriptionIleDegistirir() {
         us009Page.patientDescription.clear();
-        us009Page.patientDescription.sendKeys(ConfigReader.getProperty("description01"));
+        us009Page.patientDescription.sendKeys(ConfigReader1.getProperty("description01"));
 
     }
 
@@ -235,7 +235,7 @@ public class US009StepDef {
 
          */
 
-        us009Page.country01.sendKeys(ConfigReader.getProperty("user01"));
+        us009Page.country01.sendKeys(ConfigReader1.getProperty("user01"));
 
 
     }
@@ -243,7 +243,7 @@ public class US009StepDef {
     @And("Country bilgisini  istenen country ile degistirir")
     public void countryBilgisiniIstenenCountryIleDegistirir() throws InterruptedException {
         Thread.sleep(1000);
-        us009Page.country01.sendKeys(ConfigReader.getProperty("country01"));
+        us009Page.country01.sendKeys(ConfigReader1.getProperty("country01"));
         Thread.sleep(1000);
 
     }
@@ -349,7 +349,7 @@ public class US009StepDef {
 
     @And("Acilan sayfada search kutusuna aranacak hasta SSN numarasini girer")
     public void acilanSayfadaSearchKutusunaAranacakHastaSSNNumarasiniGirer() throws InterruptedException {
-        us009Page.ssnBox.sendKeys(ConfigReader.getProperty("ssnHasta02"));
+        us009Page.ssnBox.sendKeys(ConfigReader1.getProperty("ssnHasta02"));
         Thread.sleep(1000);
 
     }
@@ -370,7 +370,7 @@ public class US009StepDef {
     @And("Acilan sayfada search kutusuna hasta SSN numarasini girer")
     public void acilanSayfadaSearchKutusunaHastaSSNNumarasiniGirer() throws InterruptedException {
         us009Page.ssnBox.clear();
-        us009Page.ssnBox.sendKeys(ConfigReader.getProperty("ssnHasta03"));
+        us009Page.ssnBox.sendKeys(ConfigReader1.getProperty("ssnHasta03"));
         Thread.sleep(1000);
 
     }

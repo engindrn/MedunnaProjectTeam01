@@ -8,32 +8,33 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.junit.Assert;
 
-
+import pojos.Registrant1;
 import pojos.User;
-import utilities.ConfigReader;
+import utilities.ConfigReader1;
 import utilities.JsonUtil;
 
 
 import java.io.IOException;
 
+
 import static io.restassured.RestAssured.given;
+
 import static org.junit.Assert.assertEquals;
-import static utilities.Authentication.generateToken;
+import static utilities.Authentication1.generateToken;
 import static utilities.WriteToTxt.saveRegistrantApiData;
+
 
 public class US001ApiStepDef {
 
-    User user=new User();
+    Registrant1 register = new Registrant1();
     Faker faker = new Faker();
     Response response;
     RequestSpecification spec;
 
     @When("Kullanici pathparams ayarlamasini yapar")
     public void kullanici_pathparams_ayarlamasini_yapar() {
-        spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("medunna_url")).build();
+        spec = new RequestSpecBuilder().setBaseUri(ConfigReader1.getProperty("medunna_url")).build();
         spec.pathParams("first", "api", "second", "user", "third","ssn=600-60-6001" );
 
 
@@ -69,35 +70,17 @@ public class US001ApiStepDef {
 
     @When("Kullanici gerekli path params ayarlar")
     public void kullanici_gerekli_path_params_ayarlar() {
-        spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("medunna_url")).build();
+       /* spec = new RequestSpecBuilder().setBaseUri(ConfigReader1.getProperty("medunna_url")).build();
         spec.pathParams("first", "api", "second", "register");
+
+        */
     }
 
     @Then("Kullanici expected datalari girer")
     public void expected_datalari_girer() {
 
 
-        String    firstname = faker.name().firstName();
-        String    lastname = faker.name().lastName();
-        String    ssn = faker.idNumber().ssnValid();
-        String    email = faker.internet().emailAddress();
-        String    username = faker.name().username();
-
-        user.setFirstName(firstname);
-        user.setLastName(lastname);
-        user.setSsn(ssn);
-        user.setEmail(email);
-        user.setLogin(username);
-
-
-
-/*
-       user=new User( 2000,faker.name().username(),faker.name().firstName(),faker.name().lastName(),faker.idNumber().ssnValid(),faker.internet().emailAddress(),faker.internet().image(),
-               true, null, null,null,null,null,null);
-
- */
-
-
+        register = new Registrant1(faker.name().firstName(),faker.name().lastName(),faker.idNumber().ssnValid(),faker.name().username(),"123",faker.internet().password(), faker.internet().emailAddress());
 
 
     }
@@ -105,37 +88,33 @@ public class US001ApiStepDef {
     @Then("Kullanici request gonderir ve response alir")
     public void kullanici_request_gonderir_ve_response_alir() {
 
-
-        response = given().spec(spec).contentType(ContentType.JSON)
-                .body(user)
-                .when()
-                .post("/{first}/{second}");
+        response = given().body(register).contentType(ContentType.JSON).when()
+                .post(ConfigReader1.getProperty("medunnaRegister"));
 
     }
 
     @Then("Kullanici api kayitlarini dosyaya kaydeder")
     public void kullamici_api_kayitlarini_dosyaya_kaydeder() {
-        saveRegistrantApiData(user);
+        saveRegistrantApiData(register);
     }
 
     @Then("Kullanici  api kayitlarini dogrular")
     public void kullanici_api_kayitlarini_dogrular() throws IOException {
-        response.then().assertThat().statusCode(200);
 
 
+        Registrant1 actual = response.as(Registrant1.class);
+        System.out.println("actual:"+response.asString());
 
-      ObjectMapper obj = new ObjectMapper();
+        assertEquals(201, response.getStatusCode());
+        assertEquals(register.getFirstName(), actual.getFirstName());
+        assertEquals(register.getLastName(), actual.getLastName());
+        assertEquals(register.getLogin(), actual.getLogin());
+        assertEquals(register.getEmail(), actual.getEmail());
 
-       User actualuser = JsonUtil.convertJsonToJavaObject(response.asString(), User.class);
-       System.out.println("Actual Data: " + actualuser);
-        System.out.println("expected:" + user);
 
-        Assert.assertEquals(user.getFirstName(), actualuser.getFirstName());
-        Assert.assertEquals(user.getLastName(), actualuser.getLastName());
-        Assert.assertEquals(user.getSsn(), actualuser.getSsn());
-        Assert.assertEquals(user.getEmail(), actualuser.getEmail());
-        Assert.assertEquals(user.getLogin(), actualuser.getLogin());
     }
+
+
 
 
 }

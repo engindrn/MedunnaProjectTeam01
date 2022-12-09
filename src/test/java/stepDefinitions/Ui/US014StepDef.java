@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import pages.US008_014Page;
-import utilities.ConfigReader;
+import utilities.ConfigReader1;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
@@ -22,8 +22,8 @@ public class US014StepDef {
     public void doktorOlarakLoginOlur() {
         page.accountMenu.click();
         page.signIn.click();
-        page.usernameBox.sendKeys(ConfigReader.getProperty("physicianUsername"));
-        page.passwordBox.sendKeys(ConfigReader.getProperty("physicianPassword"));
+        page.usernameBox.sendKeys(ConfigReader1.getProperty("physicianUsername"));
+        page.passwordBox.sendKeys(ConfigReader1.getProperty("physicianPassword"));
         page.signInButton.click();
     }
 
@@ -55,12 +55,18 @@ public class US014StepDef {
         int index = ReusableMethods.random().nextInt(page.editButtons.size() - 1);
         ReusableMethods.jsScrollClick(page.editButtons.get(index));
     }
-
+/*
     @And("{int} saniye bekler")
     public void saniyeBekler(int sn) {
 
+
+
         ReusableMethods.waitFor(sn);
     }
+
+ */
+
+
 
     @Then("doctor status bilgisi secer ve dogrular")
     public void doctorStatusBilgisiSecerVeDogrular() {
@@ -77,7 +83,7 @@ public class US014StepDef {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        saniyeBekler(3);
+        //saniyeBekler(3);
     }
 
     @And("doctor rezerve edilmis hasta odasini gunceller")

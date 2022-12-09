@@ -1,6 +1,6 @@
 package utilities;
 
-import pojos.Registrant;
+import pojos.Registrant1;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -95,13 +95,13 @@ public class ReadTxt {
             String line = br.readLine();//856-45-6789,
 
             while(line != null){
-                Registrant registrant = new Registrant();
+                Registrant registrant1 = new Registrant();
 
 
-                registrant.setFirstName(line.split(",")[0]);
-                registrant.setLastName(line.split(",")[1]);
-                registrant.setSsn(line.split(",")[2]);
-                registrant.setLogin(line.split(",")[3]);
+                registrant1.setFirstName(line.split(",")[0]);
+                registrant1.setLastName(line.split(",")[1]);
+                registrant1.setSsn(line.split(",")[2]);
+                registrant1.setLogin(line.split(",")[3]);
                 if(line.split(",")[4] != null) {
                     String  id = line.split(",")[4];
                     boolean flag = true;
@@ -114,12 +114,12 @@ public class ReadTxt {
                         }
                     }
                     if(flag)
-                    registrant.setId(Integer.parseInt(line.split(",")[4]));
+                    registrant1.setId(Integer.parseInt(line.split(",")[4]));
                 }
                 if(line.split(",")[5] != null)
-                    registrant.setEmail(line.split(",")[5]);
+                    registrant1.setEmail(line.split(",")[5]);
 
-                list.add(registrant);
+                list.add(registrant1);
 
                 line = br.readLine();
 

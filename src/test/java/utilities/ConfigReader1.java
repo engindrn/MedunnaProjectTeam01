@@ -3,7 +3,7 @@ package utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class ConfigReader {
+public class ConfigReader1 {
 
     //This class reads the configuration.properties file
     //Create Properties instance

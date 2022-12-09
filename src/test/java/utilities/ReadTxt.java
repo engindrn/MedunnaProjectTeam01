@@ -90,7 +90,7 @@ public class ReadTxt {
         try{
 
             //identify file location
-            FileReader fileReader = new FileReader(ConfigReader.getProperty("database_registrant_data"));
+            FileReader fileReader = new FileReader(ConfigReader1.getProperty("database_registrant_data"));
 
             //Read the records of the file in given location
             BufferedReader br = new BufferedReader(fileReader);

@@ -1,6 +1,6 @@
 package utilities;
-import pojos.Registrant;
-import pojos.User;
+import pojos.Registrant1;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -46,29 +46,30 @@ public class WriteToTxt {
 
 
 
-    public static void saveRegistrantData(Registrant registrant){
+    public static void saveRegistrantData(Registrant1 registrant1){
+
 
         try {
-            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("registrantFile"), true);
+            FileWriter fileWriter = new FileWriter(ConfigReader1.getProperty("registrantFile"), true);
 
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            writer.append(registrant.toString() + ", \n");
+            writer.append(registrant1.toString() + ", \n");
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void saveRegistrantApiData(User user){
+    public static void saveRegistrantApiData(Registrant1 register){
 
         try {
-            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("registrantApiFile"), true);
+            FileWriter fileWriter = new FileWriter(ConfigReader1.getProperty("registrantApiFile"), true);
 
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
-            writer.append(user.toString() + ", \n");
+            writer.append(register.toString() + ", \n");
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();

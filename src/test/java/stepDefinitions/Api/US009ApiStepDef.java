@@ -7,7 +7,7 @@ import io.restassured.response.Response;
 import pojos.Patient;
 
 import static io.restassured.RestAssured.given;
-import static utilities.Authentication.generateToken;
+import static utilities.Authentication1.generateToken;
 
 public class US009ApiStepDef {
 

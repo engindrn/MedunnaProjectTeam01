@@ -4,7 +4,7 @@ package pojos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Registrant {
+public class Registrant1 {
 
     /*
     {
@@ -37,10 +37,10 @@ public class Registrant {
     private String password;
     private String email;
 
-    public Registrant() {
+    public Registrant1() {
     }
 
-    public Registrant(String firstName, String lastName, String ssn, String login, String langKey, String password, String email) {
+    public Registrant1(String firstName, String lastName, String ssn, String login, String langKey, String password, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ssn = ssn;
