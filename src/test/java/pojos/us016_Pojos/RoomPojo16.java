@@ -22,6 +22,7 @@ public class RoomPojo16 {
     }
 
     public RoomPojo16() {
+
     }
 
     public String getDescription() {
