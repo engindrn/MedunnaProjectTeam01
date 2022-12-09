@@ -15,14 +15,10 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-<<<<<<< HEAD
-        tags = "@US018_TC10",
-=======
-
 
         tags = "@US_017",
 
->>>>>>> master
+
         dryRun = false
 
 )
