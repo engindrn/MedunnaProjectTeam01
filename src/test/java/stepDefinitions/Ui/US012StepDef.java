@@ -21,11 +21,17 @@ public class US012StepDef {
     US012Page US012Page= new US012Page();
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
     @Given("Doktor12 {string} adresine gider")
+<<<<<<< HEAD
     public void doktorUrlAdresineGider() {
         Driver.getDriver().get(ConfigReader1.getProperty("medunnaUrl"));
+=======
+    public void doktorUrlAdresineGider(String medunnaUrl) {
+
+        Driver.getDriver().get(ConfigReader.getProperty(medunnaUrl));
+>>>>>>> master
     }
 
-    @And("{int} saniye bekler")
+    @And("{int} Msaniye bekler")
     public void saniyeBekler(int arg0) {
         ReusableMethods.waitFor(3);
     }

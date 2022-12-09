@@ -126,7 +126,7 @@ public class US004StepDef {
 
     }
 
-    @And("{int} sn bekler")
+    @And("{int} sn bekler.")
     public void snBekler(int süre) {
         ReusableMethods.waitFor(süre);
 

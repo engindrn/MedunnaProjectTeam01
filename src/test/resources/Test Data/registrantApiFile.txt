@@ -14,6 +14,7 @@ User(id=0, login=jayne.macejkovic, firstName=Timothy, lastName=Olson, ssn=018-55
 User(id=0, login=ruthanne.lebsack, firstName=Exie, lastName=Cummings, ssn=086-12-4947, email=vernon.fay@yahoo.com, imageUrl=null, activated=false, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
 User(id=3333, login=ırving.kreiger, firstName=Una, lastName=Bogisich, ssn=627-76-8427, email=lowell.conn@gmail.com, imageUrl=http://lorempixel.com/g/720/348/food/, activated=true, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
 User(login=erin.lebsack, firstName=Brandon, lastName=Yundt, ssn=072-43-8631, email=fredric.treutel@hotmail.com, imageUrl=http://lorempixel.com/1366/768/abstract/, activated=true, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
+<<<<<<< HEAD
 User1(id=0, login=gaylord.bashirian, firstName=Jarrod, lastName=Lynch, ssn=352-32-7134, email=jeffrey.bogan@hotmail.com, imageUrl=null, activated=false, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
 userpojo{createdBy='null', createdDate='null', id=null, login='dwight.purdy', firstName='Shakita', LastName='null', email='kelley.hane@gmail.com', activated=null, langKey='null', imageUrl=null, resetDate=null, ssn='698-71-4612'}, 
 User1(id=2000, login=jayme.gibson, firstName=Branden, lastName=Price, ssn=579-28-1394, email=rhett.zieme@hotmail.com, imageUrl=http://lorempixel.com/g/640/200/animals/, activated=true, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
@@ -33,3 +34,8 @@ Registrant{firstName='Forrest', lastName='Orn', ssn='410-39-0760', login='johnso
 Registrant{firstName='Normand', lastName='Upton', ssn='330-95-1247', login='jeannie.murphy', langKey='123', password='6cbqzx1hxi', email='pasty.witting@hotmail.com'}, 
 Registrant{firstName='Jaime', lastName='O'Conner', ssn='781-50-7011', login='cordelia.weimann', langKey='123', password='2qmald4esoy0w5f', email='mabel.botsford@gmail.com'}, 
 Registrant{firstName='Vicente', lastName='Borer', ssn='582-21-0113', login='annice.crona', langKey='123', password='9bv4yo4duopypz', email='divina.cartwright@gmail.com'}, 
+=======
+User(id=0, login=mindi.hamill, firstName=Rod, lastName=Boyle, ssn=597-57-0638, email=adrianna.kuhlman@hotmail.com, imageUrl=null, activated=false, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
+User(id=0, login=graig.thiel, firstName=Teddy, lastName=Ullrich, ssn=275-79-2665, email=emmett.frami@yahoo.com, imageUrl=null, activated=false, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
+User(id=0, login=delphine.adams, firstName=Sau, lastName=Hahn, ssn=112-20-2750, email=micki.willms@yahoo.com, imageUrl=null, activated=false, langKey=null, createdBy=null, createdDate=null, lastModifiedBy=null, lastModifiedDate=null, authorities=null), 
+>>>>>>> master

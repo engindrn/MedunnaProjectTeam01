@@ -11,11 +11,11 @@ import static io.restassured.RestAssured.given;
 
 public class Authentication1 {
 
-        //    public static void main(String[] args) {
-//
-//        String guncelToken = generateToken();
-//        System.out.println(guncelToken);
-//    }
+           public static void main(String[] args) {
+
+      String guncelToken = generateToken();
+       System.out.println(guncelToken);
+   }
 
 
     public static String generateToken() {

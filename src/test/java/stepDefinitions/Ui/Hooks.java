@@ -33,16 +33,16 @@ scenario'lar için screenshoot olmasi amaciyla
 
 
     @After
-    public void tearDown(Scenario scenario) throws IOException {
-        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-        if (scenario.isFailed()) {
-            scenario.attach(screenshot, "/image/png","screenshots");
-            ReusableMethods.getScreenshot("test_failed");
+    public void tearDown(Scenario scenario){  final byte[] screenshot=((TakesScreenshot)
+            Driver.getDriver()).getScreenshotAs(OutputType.BYTES);  if (scenario.isFailed()) {
+        scenario.attach(screenshot, "image/png","screenshots");
 
-        }
+    }
         if (Driver.getDriver() != null) {
             Driver.closeDriver();
         }
+
+
 
     }
 }
