@@ -99,10 +99,7 @@
         <object-type name="FUNCTİON" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
-<<<<<<<<< Temporary merge branch 1
-=========
         <object-type name="TYPE ATTRİBUTE" sorting-type="POSITION" />
->>>>>>>>> Temporary merge branch 2
       </sorting>
       <default-editors>
         <object-type name="VİEW" editor-type="SELECTION" />
