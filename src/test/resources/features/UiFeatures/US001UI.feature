@@ -100,3 +100,9 @@ Feature:US001 Kayit olmak icin SSN, Firstname ve Lastname bilgileri girilebilmel
       | .              |
       | 1/.*sa         |
 
+
+
+
+
+
+

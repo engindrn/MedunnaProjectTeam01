@@ -45,9 +45,9 @@ public class US002Page {
         userNameTextBox.click();
         return this;
     }
-    public US002Page GecerliUserName() throws InterruptedException {
-        Thread.sleep(3000);
-        String    username= faker.name().username();
+    public US002Page userName() throws InterruptedException {
+
+        String    username= "team01";
         userNameTextBox.sendKeys(username);
         return this;
     }
