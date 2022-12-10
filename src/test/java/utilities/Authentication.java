@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class Authentication1 {
+public class Authentication {
 
            public static void main(String[] args) {
 

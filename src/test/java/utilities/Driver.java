@@ -28,7 +28,7 @@ public class Driver {
     // icin null olmayacak ve direk return edecek ve diger testlerimiz ayni pencere(driver) uzerinde calsacak.
     public static WebDriver getDriver() {
         if (driver == null) {
-            switch (ConfigReader1.getProperty("browser")) {
+            switch (ConfigReader.getProperty("browser")) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();

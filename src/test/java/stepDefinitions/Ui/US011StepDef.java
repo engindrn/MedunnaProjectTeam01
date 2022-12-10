@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.US011Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.time.Duration;
@@ -25,7 +25,7 @@ public class US011StepDef {
 
     @Given("Doktor11 medunna sayfasina gider")
     public void doktorMedunnaSayfasinaGider() {
-        Driver.getDriver().get(ConfigReader1.getProperty("medunnaUrl11"));
+        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl11"));
     }
 
     @Then("Doktor11 kisi simgesinin uzerine tiklar")
@@ -41,13 +41,13 @@ public class US011StepDef {
 
     @Then("Doktor11 username alanina gecerli bir username girer")
     public void doktorUsernameAlaninaGecerliBirUsernameGirer() {
-        page.username.sendKeys(ConfigReader1.getProperty("username11"));
+        page.username.sendKeys(ConfigReader.getProperty("username11"));
     }
 
 
     @And("Doktor11 password alanina gecerli bir password girer")
     public void doktorPasswordAlaninaGecerliBirPasswordGirer() {
-        actions.sendKeys(Keys.TAB).sendKeys(ConfigReader1.getProperty("password11")).perform();
+        actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("password11")).perform();
         
     }
 

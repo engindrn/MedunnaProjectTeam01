@@ -9,7 +9,7 @@ import utilities.ObjectMapperUtils;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-import static utilities.Authentication1.generateToken;
+import static utilities.Authentication.generateToken;
 
 public class US010ApiStepDef {
 

@@ -50,7 +50,7 @@ public class WriteToTxt {
 
 
         try {
-            FileWriter fileWriter = new FileWriter(ConfigReader1.getProperty("registrantFile"), true);
+            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("registrantFile"), true);
 
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
@@ -64,7 +64,7 @@ public class WriteToTxt {
     public static void saveRegistrantApiData(Registrant1 register){
 
         try {
-            FileWriter fileWriter = new FileWriter(ConfigReader1.getProperty("registrantApiFile"), true);
+            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("registrantApiFile"), true);
 
 
             BufferedWriter writer = new BufferedWriter(fileWriter);

@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import pages.US008_014Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
@@ -22,8 +22,8 @@ public class US014StepDef {
     public void doktorOlarakLoginOlur() {
         page.accountMenu.click();
         page.signIn.click();
-        page.usernameBox.sendKeys(ConfigReader1.getProperty("physicianUsername"));
-        page.passwordBox.sendKeys(ConfigReader1.getProperty("physicianPassword"));
+        page.usernameBox.sendKeys(ConfigReader.getProperty("physicianUsername"));
+        page.passwordBox.sendKeys(ConfigReader.getProperty("physicianPassword"));
         page.signInButton.click();
     }
 

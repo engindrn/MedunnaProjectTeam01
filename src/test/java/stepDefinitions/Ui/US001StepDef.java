@@ -8,7 +8,7 @@ import org.junit.Assert;
 import pages.US001Page;
 import pages.US002Page;
 import pages.US018Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -21,7 +21,7 @@ public class US001StepDef {
 
     @Given("Kullanici {string} sayfasina gider")
     public void kullanici_sayfasina_gider(String string) {
-        Driver.getDriver().get(ConfigReader1.getProperty("medunna_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("medunna_url"));
         waitFor(3);
     }
 

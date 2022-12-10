@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.testng.asserts.SoftAssert;
 import pages.US003Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -20,7 +20,7 @@ public class US003StepDef {
 
     @Given("YP Kullanici Medunna anasayfasina gider")
     public void eb_kullanici_medunna_anasayfasina_gider() {
-        Driver.getDriver().get(ConfigReader1.getProperty("url"));
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
     }
     @When("YP Kullanici Account Menu bolumune tiklar")
     public void eb_kullanici_account_menu_bolumune_tiklar() {

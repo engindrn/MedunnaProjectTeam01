@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.US004Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -111,7 +111,7 @@ public class US004StepDef {
     @Given("Kullanici04 {string} adresine gider")
     public void kullaniciAdresineGider(String url) {
 
-        Driver.getDriver().get(ConfigReader1.getProperty(url));
+        Driver.getDriver().get(ConfigReader.getProperty(url));
     }
 
     @When("Kullanici04 Giris simgesine tiklar")

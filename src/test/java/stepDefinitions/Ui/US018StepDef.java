@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import pages.US018Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 import static utilities.ReusableMethods.waitFor;
@@ -17,7 +17,7 @@ public class US018StepDef {
 
     @Given("Admin medunna_url sayfasina gider")
     public void admin_medunna_url_sayfasina_gider() {
-        Driver.getDriver().get(ConfigReader1.getProperty("medunna_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("medunna_url"));
         waitFor(1);
     }
 

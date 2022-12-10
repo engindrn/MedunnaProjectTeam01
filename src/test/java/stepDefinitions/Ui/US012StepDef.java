@@ -1,3 +1,4 @@
+
 package stepDefinitions.Ui;
 
 import io.cucumber.java.en.And;
@@ -8,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import pages.US012Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -18,17 +19,14 @@ import java.awt.event.KeyEvent;
 import static org.junit.Assert.assertTrue;
 
 public class US012StepDef {
-    US012Page US012Page= new US012Page();
-    JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
-    @Given("Doktor12 {string} adresine gider")
-<<<<<<< HEAD
-    public void doktorUrlAdresineGider() {
-        Driver.getDriver().get(ConfigReader1.getProperty("medunnaUrl"));
-=======
-    public void doktorUrlAdresineGider(String medunnaUrl) {
+    US012Page US012Page = new US012Page();
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
-        Driver.getDriver().get(ConfigReader.getProperty(medunnaUrl));
->>>>>>> master
+    @Given("Doktor12 {string} adresine gider")
+
+    public void doktorUrlAdresineGider() {
+        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+
     }
 
     @And("{int} Msaniye bekler")
@@ -48,12 +46,12 @@ public class US012StepDef {
 
     @And("Doktor12 Username alanina gecerli bir username girer")
     public void doktorUsernameAlaninaGecerliBirUsernameGirer() {
-        US012Page.usernameTextBox.sendKeys(ConfigReader1.getProperty("doktorUserName012"));
+        US012Page.usernameTextBox.sendKeys(ConfigReader.getProperty("doktorUserName012"));
     }
 
     @And("Doktor12 Password alanina gecerli bir password girer")
     public void doktorPasswordAlaninaGecerliBirPasswordGirer() {
-        US012Page.passwordTextBox.sendKeys(ConfigReader1.getProperty("password012"));
+        US012Page.passwordTextBox.sendKeys(ConfigReader.getProperty("password012"));
     }
 
     @And("Doktor12 Sign in butonuna tiklar")
@@ -115,7 +113,7 @@ public class US012StepDef {
             jse.executeScript("arguments[0].scrollIntoView(true);", submit);
             jse.executeScript("arguments[0].click();", submit);
         }
-        }
+    }
 
     @And("Doktor12 Sodium testi ister")
     public void doktorSodiumTestiIster() {
@@ -208,13 +206,20 @@ public class US012StepDef {
         jse.executeScript("arguments[0].click();", save);
 
     }
+}
 /*
     @Then("Doktor the appointment is updated with identifier {int} yazisini gorur.")
     public void doktorTheAppointmentIsUpdatedWithIdentifierYazisiniGorur(int arg0) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(US012Page.update));
         assertTrue(US012Page.update.isDisplayed());
-    }*/
 
-}
+ */
+
+
+
+
+
+
+
 

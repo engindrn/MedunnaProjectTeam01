@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.US010Page;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -19,7 +19,7 @@ public class US010StepDef {
 
     @Given("Doktor10 {string} adresine gider")
     public void doktorAdresineGider(String url) {
-        Driver.getDriver().get(ConfigReader1.getProperty(url));
+        Driver.getDriver().get(ConfigReader.getProperty(url));
 
     }
 

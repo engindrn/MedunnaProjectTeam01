@@ -11,7 +11,7 @@ import io.restassured.specification.RequestSpecification;
 
 import pojos.Registrant1;
 import pojos.User;
-import utilities.ConfigReader1;
+import utilities.ConfigReader;
 import utilities.JsonUtil;
 
 
@@ -21,7 +21,7 @@ import java.io.IOException;
 import static io.restassured.RestAssured.given;
 
 import static org.junit.Assert.assertEquals;
-import static utilities.Authentication1.generateToken;
+import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.saveRegistrantApiData;
 
 
@@ -34,7 +34,7 @@ public class US001ApiStepDef {
 
     @When("Kullanici pathparams ayarlamasini yapar")
     public void kullanici_pathparams_ayarlamasini_yapar() {
-        spec = new RequestSpecBuilder().setBaseUri(ConfigReader1.getProperty("medunna_url")).build();
+        spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("medunna_url")).build();
         spec.pathParams("first", "api", "second", "user", "third","ssn=600-60-6001" );
 
 
@@ -89,7 +89,7 @@ public class US001ApiStepDef {
     public void kullanici_request_gonderir_ve_response_alir() {
 
         response = given().body(register).contentType(ContentType.JSON).when()
-                .post(ConfigReader1.getProperty("medunnaRegister"));
+                .post(ConfigReader.getProperty("medunnaRegister"));
 
     }
 
