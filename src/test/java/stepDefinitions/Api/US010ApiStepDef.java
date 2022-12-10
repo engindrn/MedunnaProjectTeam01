@@ -16,7 +16,7 @@ public class US010ApiStepDef {
 
     Response response;
     PatientUserPojo patientUserPojo;
-    PatientPojo patientPojo;
+    PatientPojo patientPojo2;
     PhysicianUserPojo physicianUserPojo;
     PhysicianPojo physicianPojo;
     AppointmentPojo expectedData;
@@ -40,11 +40,11 @@ public class US010ApiStepDef {
         response.prettyPrint();
 
         patientUserPojo = new PatientUserPojo("anonymousUser", "2022-11-23T23:18:38.368374Z", 330523, "hastaalpcan", "Hasta", "Alpcan", "hastaalpcan@gmail.com", true, "en", null, null, "335-69-4154");
-        patientPojo = new PatientPojo("hastaalpcan", "2022-11-23T23:24:17.253237Z", 329900, "Hasta", "Alpcan", null, "0146487454", null, null, null, "hastaalpcan@gmail.com", null, patientUserPojo, null, null, null);
+        patientPojo2 = new PatientPojo("hastaalpcan", "2022-11-23T23:24:17.253237Z", 329900, "Hasta", "Alpcan", null, "0146487454", null, null, null, "hastaalpcan@gmail.com", null, patientUserPojo, null, null, null);
         physicianUserPojo = new PhysicianUserPojo("anonymousUser", "2022-11-23T22:53:44.818801Z", 330652, "doktoralpcan", "Doktor", "Alpcan", "doktoralpcan@gmail.com", true, "en", null, null, "568-22-5696");
         physicianPojo = new PhysicianPojo("team01", "2022-11-23T23:07:14.598646Z", 330652, "Doktor", "Alpcan", "1990-01-31T23:00:00Z", "0659754554", "MALE", "Apositive", "istanbul", "", physicianUserPojo, "NEUROLOGY", null, null, 250.00, "", null);
 
-        expectedData = new AppointmentPojo("hastaalpcan", "2022-11-23T23:24:17.253498Z", 330384, "2022-11-24T01:00:00Z", "2022-11-24T02:00:00Z", "PENDING", "", null, null, null, null, physicianPojo, patientPojo, null);
+        expectedData = new AppointmentPojo("hastaalpcan", "2022-11-23T23:24:17.253498Z", 330384, "2022-11-24T01:00:00Z", "2022-11-24T02:00:00Z", "PENDING", "", null, null, null, null, physicianPojo, patientPojo2, null);
         actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), AppointmentPojo.class);
 
     }
@@ -54,7 +54,7 @@ public class US010ApiStepDef {
     public void kullaniciPatientIDYiDogrular() {
 
         System.out.println(actualData.getPatient().getId());
-       assertEquals(patientPojo.getId(), actualData.getPatient().getId());
+       assertEquals(patientPojo2.getId(), actualData.getPatient().getId());
 
 
     }

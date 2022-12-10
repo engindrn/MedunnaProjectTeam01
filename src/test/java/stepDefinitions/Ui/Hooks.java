@@ -42,5 +42,7 @@ scenario'lar için screenshoot olmasi amaciyla
             Driver.closeDriver();
         }
 
+
+
     }
 }

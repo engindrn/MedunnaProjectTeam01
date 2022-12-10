@@ -1,5 +1,7 @@
 
 package utilities;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -25,7 +27,7 @@ public class ReusableMethods {
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
+        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
         File finalDestination = new File(target);
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
@@ -37,7 +39,7 @@ public class ReusableMethods {
         // TakesScreenshot is an interface of selenium that takes the screenshot
         File source = element.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
-        String wElementSS = System.getProperty("user.dir") + "/target/WElementScreenshots/" + name + date + ".png";
+        String wElementSS = System.getProperty("user.dir") + "/test-output/WElementScreenshots/" + name + date + ".png";
         File finalDestination = new File(wElementSS);
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
@@ -161,5 +163,12 @@ public class ReusableMethods {
             System.out.println(
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
         }
+
+    }
+
+
+    public static Faker getFaker() {
+        Faker faker;
+        return faker = new Faker();
     }
 }
