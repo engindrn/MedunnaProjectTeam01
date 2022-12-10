@@ -1,3 +1,4 @@
+
 package stepDefinitions.Ui;
 
 import io.cucumber.java.en.And;
@@ -18,12 +19,14 @@ import java.awt.event.KeyEvent;
 import static org.junit.Assert.assertTrue;
 
 public class US012StepDef {
-    US012Page US012Page= new US012Page();
-    JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
-    @Given("Doktor12 {string} adresine gider")
-    public void doktorUrlAdresineGider(String medunnaUrl) {
+    US012Page US012Page = new US012Page();
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
-        Driver.getDriver().get(ConfigReader.getProperty(medunnaUrl));
+    @Given("Doktor12 {string} adresine gider")
+
+    public void doktorUrlAdresineGider() {
+        Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+
     }
 
     @And("{int} Msaniye bekler")
@@ -110,7 +113,7 @@ public class US012StepDef {
             jse.executeScript("arguments[0].scrollIntoView(true);", submit);
             jse.executeScript("arguments[0].click();", submit);
         }
-        }
+    }
 
     @And("Doktor12 Sodium testi ister")
     public void doktorSodiumTestiIster() {
@@ -203,13 +206,20 @@ public class US012StepDef {
         jse.executeScript("arguments[0].click();", save);
 
     }
+}
 /*
     @Then("Doktor the appointment is updated with identifier {int} yazisini gorur.")
     public void doktorTheAppointmentIsUpdatedWithIdentifierYazisiniGorur(int arg0) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(US012Page.update));
         assertTrue(US012Page.update.isDisplayed());
-    }*/
 
-}
+ */
+
+
+
+
+
+
+
 
