@@ -1,13 +1,11 @@
 package stepDefinitions.Api;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import pojos.Patient;
 
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;

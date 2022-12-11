@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.US001Page;
 import pages.US002Page;
+import pages.US018Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -16,6 +17,7 @@ import static utilities.ReusableMethods.waitFor;
 public class US001StepDef {
     US001Page us001 = new US001Page();
     US002Page us002 = new US002Page();
+    US018Page us018 = new US018Page();
 
     @Given("Kullanici {string} sayfasina gider")
     public void kullanici_sayfasina_gider(String string) {
@@ -255,7 +257,6 @@ public class US001StepDef {
         us002.GecersizEmail2(mail1,mail2);
 
     }
-
 
 
 }
