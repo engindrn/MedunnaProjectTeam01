@@ -1,4 +1,4 @@
-@US010
+@US010_UI_Test
 Feature:US010 Doktor (Physician) randevuları
 
   @US010_TC001
@@ -12,7 +12,7 @@ Feature:US010 Doktor (Physician) randevuları
     And  Doktor10 Sign in butonuna tiklar
     And Doktor10 My Pages sekmesine tiklar
     And Doktor10 My Appointments sekmesine tiklar
-    And 3 sn bekler
+    And 3 sn bekler.
     And Doktor10, randevu listesini ve zaman dilimlerini görür
 
 
@@ -27,6 +27,6 @@ Feature:US010 Doktor (Physician) randevuları
     And  Doktor10 Sign in butonuna tiklar
     And Doktor10 My Pages sekmesine tiklar
     And Doktor10 My Appointments sekmesine tiklar
-    And 3 sn bekler
+    And 3 sn bekler.
     And Doktor10 patient id, start date, end date, status bilgilerini görür
 
