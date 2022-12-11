@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="155.79">
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC001 Admin gecerli değerlerle sisteme giriş yapabilmeli" time="16.411">
+        <failure message="the succes message yazisi görüntülenemedi" type="java.lang.AssertionError">
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Admin04 Username alanina  "team01" girer................................passed
+And Admin04 Password alanina   "team0101" girer.............................passed
+And Admin04 SignIn butonuna tiklar..........................................passed
+And 3 sn bekler.............................................................passed
+Then Admin04 Basarili giris mesajini görür..................................failed
+
+StackTrace:
+java.lang.AssertionError: the succes message yazisi görüntülenemedi
+	at org.junit.Assert.fail(Assert.java:89)
+	at stepDefinitions.Ui.US004StepDef.adminBasariliGirisMesajiniGörür(US004StepDef.java:140)
+	at ✽.Admin04 Basarili giris mesajini görür(file:///C:/MedunnaProjectTeam01/src/test/resources/features/UiFeatures/US004UI.feature:21)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC002 Doktor  gecerli değerlerle sisteme giriş yapabilmeli" time="10.879">
+        <failure message="the succes message yazisi görüntülenemedi" type="java.lang.AssertionError">
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Doktor04 Username alanina  "doktor01." girer............................passed
+And Doktor04 Password alanina   "Doktor01." girer...........................passed
+And Doktor04 SignIn butonuna tiklar.........................................passed
+And 3 sn bekler.............................................................passed
+Then Doktor04 Basarili giris mesajini görür.................................failed
+
+StackTrace:
+java.lang.AssertionError: the succes message yazisi görüntülenemedi
+	at org.junit.Assert.fail(Assert.java:89)
+	at stepDefinitions.Ui.US004StepDef.doktorBasariliGirisMesajiniGörür(US004StepDef.java:149)
+	at ✽.Doktor04 Basarili giris mesajini görür(file:///C:/MedunnaProjectTeam01/src/test/resources/features/UiFeatures/US004UI.feature:34)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC 003 Hasta  gecerli değerlerle sisteme giriş yapabilmeli" time="11.374">
+        <failure message="the succes message yazisi görüntülenemedi" type="java.lang.AssertionError">
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Hasta04 Username alanina  "Hastateam01" girer...........................passed
+And Hasta04 Password alanina   "Hastateam.01" girer.........................passed
+And Hasta04 SignIn butonuna tiklar..........................................passed
+And 3 sn bekler.............................................................passed
+Then Hasta04 Basarili giris mesajini görür..................................failed
+
+StackTrace:
+java.lang.AssertionError: the succes message yazisi görüntülenemedi
+	at org.junit.Assert.fail(Assert.java:89)
+	at stepDefinitions.Ui.US004StepDef.hastaBasariliGirisMesajiniGörür(US004StepDef.java:158)
+	at ✽.Hasta04 Basarili giris mesajini görür(file:///C:/MedunnaProjectTeam01/src/test/resources/features/UiFeatures/US004UI.feature:48)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC004 Personel gecerli değerlerle sisteme giriş yapabilmeli" time="11.111">
+        <failure message="the succes message yazisi görüntülenemedi" type="java.lang.AssertionError">
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Personel04 Username alanina  "personelteam01." girer....................passed
+And Personel04 Password alanina   "Personelteam01." girer...................passed
+And Personel04 SignIn butonuna tiklar.......................................passed
+And 3 sn bekler.............................................................passed
+Then Personel04 Basarili giris mesajini görür...............................failed
+
+StackTrace:
+java.lang.AssertionError: the succes message yazisi görüntülenemedi
+	at org.junit.Assert.fail(Assert.java:89)
+	at stepDefinitions.Ui.US004StepDef.personelBasariliGirisMesajiniGörür(US004StepDef.java:166)
+	at ✽.Personel04 Basarili giris mesajini görür(file:///C:/MedunnaProjectTeam01/src/test/resources/features/UiFeatures/US004UI.feature:61)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC009 Kullanici gecerli username gecersiz password ile sisteme giriş yapamamali" time="10.47">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "team01" girer............................passed
+And Kullanici04 Password alanina   "team011" girer..........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC009 Kullanici gecerli username gecersiz password ile sisteme giriş yapamamali 2" time="10.721">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "team01" girer............................passed
+And Kullanici04 Password alanina   "tteam01" girer..........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC009 Kullanici gecerli username gecersiz password ile sisteme giriş yapamamali 3" time="10.444">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "team01" girer............................passed
+And Kullanici04 Password alanina   "Team01" girer...........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="Scenario: TC010 Kullanici gecersiz username gecerli password ile sisteme giriş yapamamali" time="10.548">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "tteam01" girer...........................passed
+And Kullanici04 Password alanina   "team0101" girer.........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="Scenario: TC010 Kullanici gecersiz username gecerli password ile sisteme giriş yapamamali 2" time="10.879">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "team011" girer...........................passed
+And Kullanici04 Password alanina   "team0101" girer.........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="Scenario: TC010 Kullanici gecersiz username gecerli password ile sisteme giriş yapamamali 3" time="9.929">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "TTeam01" girer...........................passed
+And Kullanici04 Password alanina   "team0101" girer.........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC011 Kullanici gecersiz username gecersiz password ile sisteme giriş yapamamali" time="13.145">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "team02" girer............................passed
+And Kullanici04 Password alanina   "team0202" girer.........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+And Kullanici04 sayfayi kapatir.............................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC011 Kullanici gecersiz username gecersiz password ile sisteme giriş yapamamali 2" time="13.195">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "TEAM01" girer............................passed
+And Kullanici04 Password alanina   "team01." girer..........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+And Kullanici04 sayfayi kapatir.............................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır" name="TC011 Kullanici gecersiz username gecersiz password ile sisteme giriş yapamamali 3" time="13.286">
+        <system-out>
+            <![CDATA[Given Kullanici04 "url" adresine gider......................................passed
+When Kullanici04 Giris simgesine tiklar.....................................passed
+And Kullanici04 Sign in simgesine tiklar....................................passed
+And Kullanici04 Username alanina  "teamm01" girer...........................passed
+And Kullanici04 Password alanina   "Team0101" girer.........................passed
+And Kullanici04 SignIn butonuna tiklar......................................passed
+And 3 sn bekler.............................................................passed
+Then Kullanici04 Authentication information not correct yazisini  görür.....passed
+And Kullanici04 sayfayi kapatir.............................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
