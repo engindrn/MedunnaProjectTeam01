@@ -72,7 +72,6 @@ public class US001ApiStepDef {
     public void kullanici_gerekli_path_params_ayarlar() {
        /* spec = new RequestSpecBuilder().setBaseUri(ConfigReader1.getProperty("medunna_url")).build();
         spec.pathParams("first", "api", "second", "register");
-
         */
     }
 
