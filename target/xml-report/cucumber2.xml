@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="140.984">
+    <testcase classname="US015 Admin tarafindan hasta olusturma ve duzenleme" name="TC003 Hasta oluşturulduğunda veya güncellendiginde" time="137.289">
+        <system-out>
+            <![CDATA[Given YS "admin15" "medunnaUrl" e gider.....................................passed
+When YS admin login olur....................................................passed
+Then YS admin Items&Titles menuden Patient tiklar...........................passed
+Then YS admin acilan pencerede Create a new Patient butonunun gorunur oldugunu dogrular ve tiklar.passed
+And YS admin acilan pencerede gecerli bilgileri girer ve save buttonuna tiklar.passed
+And YS admin id tiklar olusturulan hastaya edit yapar.......................passed
+Then YS admin hastanin email,phone,adres,description bilgisini gunceller....passed
+And YS Save buttonuna tiklar ve "A Patient is updated with identifier" mesajinin gorundugunu dogrular.passed
+And YS sayfayi kapatir......................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
