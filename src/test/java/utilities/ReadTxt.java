@@ -6,10 +6,29 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class ReadTxt {
 
+    public static String readLastLinePhysicianList(String filePath,int index) {
+        List<String> physicianList = new ArrayList<>();
+        String line = "";
+        try {
+            FileReader fileReader = new FileReader(filePath);
+
+            BufferedReader br = new BufferedReader(fileReader);
+
+
+            physicianList = br.lines().collect(Collectors.toList());
+            line = physicianList.get(physicianList.size() - index);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return line;
+    }
 
     public static List<Object> returnPhysicianIDsList(String filePath){
         List<Object>all = new ArrayList<>();
@@ -33,6 +52,8 @@ public class ReadTxt {
         }
         return all;
     }
+
+
 
 
 

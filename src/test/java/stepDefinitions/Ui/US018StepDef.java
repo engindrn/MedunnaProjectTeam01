@@ -2,16 +2,22 @@ package stepDefinitions.Ui;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.US018Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.WriteToTxt;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static utilities.ReusableMethods.waitFor;
 
 
 public class US018StepDef {
-    US018Page us018=new US018Page();
+    US018Page us018 = new US018Page();
     Select select;
 
 
@@ -21,14 +27,13 @@ public class US018StepDef {
         waitFor(1);
     }
 
-        @When("Admin anasayfadaki kullanici ikonunun altindaki Sing in butonuna tiklar")
-        public void admin_anasayfadaki_kullanici_ikonunun_altindaki_sing_in_butonuna_tiklar() {
+    @When("Admin anasayfadaki kullanici ikonunun altindaki Sing in butonuna tiklar")
+    public void admin_anasayfadaki_kullanici_ikonunun_altindaki_sing_in_butonuna_tiklar() {
 
-            us018.KullaniciIkonu();
-            Driver.waitAndClick(us018.signIn);
+        us018.KullaniciIkonu();
+        Driver.waitAndClick(us018.signIn);
 
-        }
-
+    }
 
 
     @When("Admin acilan sayfada username ve password girer ve Sing in butonuna tiklar")
@@ -39,6 +44,7 @@ public class US018StepDef {
 
 
     }
+
     @When("Admin acilan sayfada Items&Titles altindaki Physician butonuna tiklar")
     public void admin_acilan_sayfada_ıtems_titles_altindaki_physician_butonuna_tiklar() {
         Driver.waitAndClick(us018.itemsTitles);
@@ -46,15 +52,16 @@ public class US018StepDef {
 
 
     }
+
     @When("Admin acilan sayfada ilk siradaki doktorun bilgilerini gormek icin view butonuna tiklar")
     public void admin_acilan_sayfada_ilk_siradaki_doktorun_bilgilerini_gormek_icin_view_butonuna_tiklar() {
         us018.viewButonu.click();
 
 
     }
+
     @Then("Admin doktorun bilgilerini gorur")
     public void admin_doktorun_bilgilerini_gorur() {
-
 
 
     }
@@ -66,25 +73,27 @@ public class US018StepDef {
         us018.newPhysician.click();
 
 
-
     }
+
     @When("Admin Use Search box'a tik atar")
     public void admin_use_search_box_a_tik_atar() {
         us018.useSearchBox.click();
 
     }
+
     @When("Admin SSN box'a gecerli bir SSN girer")
     public void admin_ssn_box_a_gecerli_bir_ssn_girer() {
         us018.gecerliSsn();
 
     }
+
     @When("Admin Search User butonuna tiklar")
     public void admin_search_user_butonuna_tiklar() {
         us018.searchUser.click();
 
 
-
     }
+
     @Then("Admin User found with search SSN mesajini gorur")
     public void admin_user_found_with_search_ssn_mesajini_gorur() {
         us018.userFoundMessage();
@@ -96,18 +105,19 @@ public class US018StepDef {
     public void admin_doktorun_firstname_lastname_birth_date_gibi_bilgilerini_doldurur() {
         us018.lastName.click();
         waitFor(2);
-            us018.firstName.clear();
-            us018.firstName.sendKeys("Personel");
-            waitFor(2);
-            us018.lastName.clear();
-            us018.lastName.sendKeys("team01");
-            us018.birthDate.clear();
-            us018.birthDate.sendKeys("01.01.1990");
-            us018.phone.sendKeys("0555555555");
-            us018.country();
+        us018.firstName.clear();
+        us018.firstName.sendKeys("Personel");
+        waitFor(2);
+        us018.lastName.clear();
+        us018.lastName.sendKeys("team01");
+        us018.birthDate.clear();
+        us018.birthDate.sendKeys("01.01.1990");
+        us018.phone.sendKeys("0555555555");
+        us018.country();
 
 
     }
+
     @Then("Admin doktorun bilgilerini dogrular")
     public void admin_doktorun_bilgilerini_dogrular() {
         us018.validFirstName();
@@ -124,6 +134,7 @@ public class US018StepDef {
 
 
     }
+
     @Then("Admin doktorun uzmanlik alanini dogrular")
     public void admin_doktorun_uzmanlik_alanini_dogrular() {
         us018.validSpeciality();
@@ -135,6 +146,7 @@ public class US018StepDef {
         us018.chooseFile();
 
     }
+
     @Then("Admin doktorun profil resmini dogrular")
     public void admin_doktorun_profil_resmini_dogrular() {
         us018.validProfil();
@@ -159,6 +171,7 @@ public class US018StepDef {
 
 
     }
+
     @Then("Admin secilen doktoru dogrular")
     public void admin_secilen_doktoru_dogrular() {
         us018.validUserDoktor();
@@ -170,8 +183,21 @@ public class US018StepDef {
         us018.saveButonu.click();
 
     }
+
     @Then("Admin doktorun kaydedilip kaydedilmedigini dogrular")
     public void admin_doktorun_kaydedilip_kaydedilmedigini_dogrular() {
+        String id = "";
+        String expectedText = "A new Physician is created";
+
+        ReusableMethods.waitForVisibility(us018.physicianCreated.get(0), 10);
+        if (!us018.physicianCreated.isEmpty()) {
+            Assert.assertTrue("kayit olusturulamadi", us018.physicianCreated.get(0).getText().contains(expectedText));
+            id = us018.physicianCreated.get(0).getText().replaceAll("\\D", "");
+            System.out.println("physicianDataId" + ": " + id);
+            WriteToTxt.savePhysicianIds(id);
+        }
+
+
         us018.sonSayfa();
         waitFor(2);
         Driver.getDriver().navigate().refresh();
@@ -186,6 +212,7 @@ public class US018StepDef {
 
 
     }
+
     @When("Admin doktorun firstname, lastname, birthDate gibi bilgilerini degistirir")
     public void admin_doktorun_firstname_lastname_birth_date_gibi_bilgilerini_degistirir() {
 
@@ -201,6 +228,7 @@ public class US018StepDef {
         us018.phone.sendKeys("0555555555");
 
     }
+
     @Then("Admin A Physician is updated mesajini gorur")
     public void admin_a_physician_is_updated_mesajini_gorur() {
         us018.updateMessage();
@@ -210,27 +238,16 @@ public class US018StepDef {
 
     @When("Admin ilk siradaki doktoru silmek icin delete butonuna tiklar")
     public void admin_ilk_siradaki_doktoru_silmek_icin_delete_butonuna_tiklar() {
-        us018.deleteButonu.click();
+        us018.ilkSiradakideleteButonu.click();
 
 
     }
+
     @When("Admin acilan Confirm Delete Operation uyari mesajinda delete butonuna tiklar")
     public void admin_acilan_confirm_delete_operation_uyari_mesajinda_delete_butonuna_tiklar() {
+        waitFor(2);
         us018.confirmDeleteOperation.click();
         waitFor(5);
-
-    }
-
-    @And("Admin olusturdugu doktoru bulmak icin en son sayfaya gider")
-    public void adminOlusturduguDoktoruBulmakIcinEnSonSayfayaGider() {
-
-        us018.sonSayfa();
-
-    }
-
-    @And("Admin doktoru silmek icin delete butonuna tiklar")
-    public void adminDoktoruSilmekIcinDeleteButonunaTiklar() {
-        us018.deleteButonu.click();
 
     }
 
@@ -242,6 +259,11 @@ public class US018StepDef {
         Assert.assertTrue(actualText.equals(expectedText));
         waitFor(2);
 
+
     }
 
 }
+
+
+
+

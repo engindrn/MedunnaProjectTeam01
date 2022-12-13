@@ -1,4 +1,6 @@
 package utilities;
+import pages.US018Page;
+import pojos.Physician;
 import pojos.Registrant1;
 
 import java.io.BufferedWriter;
@@ -8,12 +10,29 @@ import java.util.List;
 
 public class WriteToTxt {
 
-      public static void savePhysicianIds(String fileName, List<Object> id){
-            try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,false));
+    public static void savePhysician(String fileName, List<Object> id){
 
-                for (int i=0; i< id.size(); i++)
-                    writer.append(id.get(i).toString()+",\n");
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
+
+            for (int i=0; i< id.size(); i++)
+                writer.append(id.get(i).toString()+",\n");
+
+            writer.close();
+
+        } catch (IOException e) {
+        }
+
+    }
+
+    public static void savePhysicianIds(String id){
+            try {
+                FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("apiPhysicianIds"), false);
+                BufferedWriter writer = new BufferedWriter(fileWriter);
+
+                writer.append("\n"+id);
+
+
 
                 writer.close();
             } catch (IOException e){
