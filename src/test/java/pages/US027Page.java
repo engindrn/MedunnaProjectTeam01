@@ -51,7 +51,7 @@ public class US027Page {
     @FindBy(xpath = "//button[@id='jhi-confirm-delete-cMessage']")
     public WebElement messagesPopUpDeleteButton;
 
-    @FindBy(xpath = "//button[@id='save-entity']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement passwordPageSaveButton;
 
     @FindBy(xpath = "//button[@class='Toastify__close-button Toastify__close-button--success']")

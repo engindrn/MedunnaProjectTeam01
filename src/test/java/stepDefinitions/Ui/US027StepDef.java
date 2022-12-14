@@ -79,11 +79,6 @@ import static org.junit.Assert.assertTrue;
             assertTrue(adminPage.messagesPopUpDeleteButton.isEnabled());
         }
 
-        @Then("kullanici {int} sn bekler")
-        public void kullaniciSnBekler(int istenenSaniye) {
-            ReusableMethods.waitFor(2);
-
-        }
 
         @And("YP SayfayiKapatir")
         public void YPSayfayiKapatir() {

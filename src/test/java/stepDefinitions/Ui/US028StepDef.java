@@ -151,10 +151,5 @@ public class US028StepDef {
         adminPage.loginPageSingInSingInButton.click();
     }
 
-    @Then("kullanici {int} sn bekler")
-    public void kullaniciSnBekler(int istenenSaniye) {
-        ReusableMethods.waitFor(2);
-
-    }
 
 }

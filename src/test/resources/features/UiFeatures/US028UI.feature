@@ -31,9 +31,6 @@ Feature:Admin olarak; Country oluşturabilmeli / Okumayabilmeli ve Silebilmeli
   @US_028_TC_003
   Scenario:Kullanıcı ülkeleri silebilmeli
     Given Kullanici Items&Titles butonunu tiklar ve Country secer
-    And kullanici 5 sn bekler
     And Kullanici sectigi ulkenin delete butonuna tiklar
-    And kullanici 5 sn bekler
     And Kullanici Confirm delete operation ekranini gorur ve delete i tiklar
-    And kullanici 5 sn bekler
     And Kullanici sayfayi kapatir

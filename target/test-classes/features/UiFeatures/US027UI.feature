@@ -13,7 +13,6 @@ Feature:US027 Messages by Admin Validate with API and DB
 
     And YP admin messages sayfasindaki ilk view butonuna tiklar
     And YP admin name, email, message kisimlarinin goruldugunu onaylar
-    And kullanici 1 sn bekler
     And YP SayfayiKapatir
 
   @US_027_TC_02
@@ -21,9 +20,7 @@ Feature:US027 Messages by Admin Validate with API and DB
 
     And YP admin create a new message butonuna tiklar
     And YP admin yeni mesaj icin ilgili alanlari doldurur
-    And kullanici 4 sn bekler
     And YP Save butonuna tiklar
-    And kullanici 2 sn bekler
     And YP The Appointment is updated with identifier uyarisinin goruldugunu onaylar
     And YP SayfayiKapatir
 
@@ -32,9 +29,7 @@ Feature:US027 Messages by Admin Validate with API and DB
 
     And YP admin messages sayfasindaki ilk edit butonuna tiklar
     And YP admin yeni mesaj icin ilgili alanlari doldurur
-    And kullanici 4 sn bekler
     And YP Save butonuna tiklar
-    And kullanici 2 sn bekler
     And YP The Appointment is updated with identifier uyarisinin goruldugunu onaylar
     And YP SayfayiKapatir
 
@@ -42,7 +37,6 @@ Feature:US027 Messages by Admin Validate with API and DB
   Scenario: US_027_TC_04_Admin, mesajlari silebilir.
 
     And YP admin messages sayfasindaki ilk delete butonuna tiklar
-    And kullanici 3 sn bekler
     And YP admin acilan popup da delete butonunun tiklanabilir oldugunu onaylar
     And YP SayfayiKapatir
 
