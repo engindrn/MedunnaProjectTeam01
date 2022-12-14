@@ -134,11 +134,11 @@ public class WriteToTxt {
 
  */
 
-    }
 
 
 
-<<<<<<< HEAD
+
+
     public static void saveTestDataMessage(Messages test) {
 
         try {
@@ -250,7 +250,4 @@ public class WriteToTxt {
 
 
 }
-=======
 
-
->>>>>>> master

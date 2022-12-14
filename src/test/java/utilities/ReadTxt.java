@@ -19,7 +19,7 @@ import java.util.List;
 
 public class ReadTxt {
 
-<<<<<<< HEAD
+
     public static List<Object> returnCountryNamesList(String filePath) {
 
         List<Object> all = new ArrayList<>();
@@ -120,13 +120,13 @@ public class ReadTxt {
         }
         return all;
     }
-=======
+
     public static String readLastLinePhysicianList(String filePath,int index) {
         List<String> physicianList = new ArrayList<>();
         String line = "";
         try {
             FileReader fileReader = new FileReader(filePath);
->>>>>>> master
+
 
             BufferedReader br = new BufferedReader(fileReader);
 
