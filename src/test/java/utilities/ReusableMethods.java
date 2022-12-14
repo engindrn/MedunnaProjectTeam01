@@ -171,4 +171,9 @@ public class ReusableMethods {
         Faker faker;
         return faker = new Faker();
     }
+    public static void hooverByJS(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].scrollIntoView()", element);
+        jse.executeScript("arguments[0].click();", element);
+    }
 }
