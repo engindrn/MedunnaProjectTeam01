@@ -1,6 +1,7 @@
 package stepDefinitions.Ui;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -8,6 +9,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
+
+import static base_url_setup.MedunnaBaseUrl.medunnaSetup;
 
 public class Hooks {
     /*
@@ -30,19 +33,27 @@ scenario'lar için screenshoot olmasi amaciyla
      */
 
 
+    @Before(value="@US019_API_Test")
+
+    public void beforApi(){
+        medunnaSetup();
+
+    }
+
+
 
 
     @After
-    public void tearDown(Scenario scenario) throws IOException {
-        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-        if (scenario.isFailed()) {
-            scenario.attach(screenshot, "/image/png","screenshots");
-            ReusableMethods.getScreenshot("test_failed");
+    public void tearDown(Scenario scenario){  final byte[] screenshot=((TakesScreenshot)
+            Driver.getDriver()).getScreenshotAs(OutputType.BYTES);  if (scenario.isFailed()) {
+        scenario.attach(screenshot, "image/png","screenshots");
 
-        }
+    }
         if (Driver.getDriver() != null) {
             Driver.closeDriver();
         }
+
+
 
     }
 }

@@ -224,4 +224,14 @@ public class DatabaseUtility {
     public static List<Object> getRowListWithParam(String query,int row) {
         return getQueryResultList(query).get(row);
     }
+    public static ResultSet getResultset() {
+        try {
+            statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
 }
+
