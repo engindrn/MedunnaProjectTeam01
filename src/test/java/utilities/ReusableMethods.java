@@ -171,6 +171,7 @@ public class ReusableMethods {
         Faker faker;
         return faker = new Faker();
     }
+<<<<<<< HEAD
 
     //====== JS Scroll ====//
     public static void jsScroll(WebElement webElement) {
@@ -271,11 +272,14 @@ public class ReusableMethods {
         // 2030-01-01  yıl ay gun olmalı
 
     }
+=======
+>>>>>>> master
     public static void hooverByJS(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView()", element);
         jse.executeScript("arguments[0].click();", element);
     }
+<<<<<<< HEAD
 
     public static void scrollIntoView(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
@@ -283,3 +287,6 @@ public class ReusableMethods {
     }
 
     }
+=======
+}
+>>>>>>> master

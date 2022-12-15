@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.waitFor;
@@ -240,10 +242,10 @@ public class US018Page {
 
         return this;
     }
-
+    @FindBy(xpath = " //div[@role='alert']")
+    public List<WebElement> physicianCreated;
     @FindBy(xpath = " //div[@role='alert']")
     public WebElement updateMessage;
-
     public US018Page updateMessage() {
         waitFor(2);
 
@@ -252,8 +254,19 @@ public class US018Page {
         return this;
     }
 
+    @FindBy(xpath = "//tbody//tr//td[18]//a[@class='btn btn-danger btn-sm']")
+    public List<WebElement> sonDoktorDeleteButonu;
+
+    @FindBy(xpath = "//*[text()='Delete']")
+    public WebElement ilkSiradakideleteButonu;
+
+
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement deletedMessage;
+
+
+    @FindBy(xpath = "//button[@id='jhi-confirm-delete-physician']")
+    public WebElement confirmDeleteOperation;
 
 
 
@@ -285,12 +298,9 @@ public class US018Page {
     public WebElement useSearchBox;
     @FindBy(xpath = "//*[text()='Search User']")
     public WebElement searchUser;
-    @FindBy(xpath = "//*[text()='Delete']")
-    public WebElement deleteButonu;
 
 
-    @FindBy(xpath = "//button[@id='jhi-confirm-delete-physician']")
-    public WebElement confirmDeleteOperation;
+
 
 
 
