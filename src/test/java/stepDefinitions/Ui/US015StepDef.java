@@ -74,9 +74,9 @@ public class US015StepDef {
         page.bloodGroupDdmPatient.sendKeys("O+");
         page.addressBoxPatient.sendKeys(Faker.instance().address().fullAddress());
         page.descriptionBoxPatient.sendKeys("yasemen");
-        page.countryDdmPatient.sendKeys("Türkiyem");
+        page.countryDdmPatient.sendKeys("Türkiye");
         ReusableMethods.waitForClickablility(page.stateDdmPatient,3);
-        page.stateDdmPatient.sendKeys("Bursa");
+        page.stateDdmPatient.sendKeys("Istanbul");
         ReusableMethods.jsScrollClick(page.saveButtonPatient);
         ReusableMethods.waitFor(3);
         //  ReusableMethods.waitForClickablility(page.saveButtonPatient,3);
